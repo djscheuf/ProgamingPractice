@@ -1,0 +1,21 @@
+1. XML Crawler
+	- GUI, to read through and display XML file structure
+	- Specifically for larger files, should define data types
+	- Possible with examples.
+	
+	UI:
+		- Rudimentary input screen ( file select)
+		- Text display of heirarchical structure
+			- Should be something like::
+				HigherClass::<struct>
+					Name::<string> - this, that
+					FlagGroup::<struct>
+						Flag1::<bool> - true, false
+		- And then an option to save the summary to another text file.
+		- Might consider colored text on the summary view page.
+		
+2. Android OS Restaurant randomizer app ?
+3. Redo KeepNote in python, maybe for Android
+4. Arduino projects
+	- remember you still wanted to do the robot
+	- and there was the hack-a-thon thing. (IFTTT)
