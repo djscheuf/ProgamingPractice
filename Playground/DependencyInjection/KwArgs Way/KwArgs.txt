@@ -1,0 +1,29 @@
+Commentary:
+    This manner was simpler to implement in Python, provided that the Features global is properly managed.
+    The names can be hard coded in a separate globals file. However it still relies on very specific names in the
+    class which uses the features.
+
+    Pro:
+        Explicit Indication of Dependency @ construction time
+        Easily Extendable
+        Easy to Set Up
+
+    Cons:
+        Weak to typographical errors
+        Weak typing controls (but that is kind of a python thing)
+
+    Mitigations:
+        It is possible to code the names apart from the instantiation of Feature
+            However it is not possible to do so for the class constructor
+            Might be worth looking to see if the Feature provider can produce the same functionality.
+        The Feature Provider, while not explicit at the constructor level, allows for names, or keys to be
+            specified beyond both the instantiation and the constructor of the class. This would greatly reduce the
+            risks.
+
+        The kwArgs method does not prevent the feature value from being changed by the consumers, or otherwise. Further
+            this change can be so simple as the assignment, whereas the Feature provider makes this more explicit.
+            Additionally the feature provider could be implemented to prevent such an operation altogether.
+
+
+
+

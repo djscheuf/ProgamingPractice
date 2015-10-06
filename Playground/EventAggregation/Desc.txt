@@ -1,0 +1,32 @@
+Dependency InjectionEvent Aggregation
+    see: https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern
+        https://en.wikipedia.org/wiki/Event-driven_programming
+
+I have seen this used in WE, to significantly good effect. It allows for decoupling of senders and handlers
+or listeners, and for asynchronous execution of various actions.
+
+ I believe the same may be achieve in Python with appropriate planning and common name idioms.
+ This project houses the files I believe will enable such a feature.
+
+ The following link is to an implementation through a third party library, which may serve as inspiration and
+ instruction.
+    http://pubsub.sourceforge.net/
+
+Commentary:
+    Firstly this was vastly easier than anticipated. In conjuntion with the Feature provider pattern this is a potent
+    programming concept. However, I have not yet tried to use this with a Class function. I suppose it should not be any
+    more difficult, but It might. I shall try in an alternative example.
+
+Commentary 2;
+    Well I am pleased to report that it does indeed work for particular instances of a class.
+    (Tried in a simple example) for the next step I shall try with one class to launch the event and another to
+    listen.
+
+Commentary 3:
+    Well I have good news and bad. It would appear that I can indeed transfer events between classes. Although when I
+     refactored to support such a test, I ran into a relative-path issue in the demos category. Not too big a deal, but
+     definitely results in some tighter coupling between the EventTopicEnum and the EventAggregators.
+     That aside it appears 1 to 1 event reception works just fine.
+
+     Taking some additional thought, I ought to implement the calls to the listener with a copy of the event data rather
+     than the original, to prevent accidental collusion.

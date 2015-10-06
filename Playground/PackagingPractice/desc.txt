@@ -1,0 +1,17 @@
+Purpose:
+    Gain better understanding on how to execute packaging and importing of given package.
+    And to leave an example for later usage.
+
+Commentary;
+    This link provides good insight and was the inspiration for the initial example:
+        http://www.python-course.eu/python3_modules_and_modular_programming.php
+    Some notes from the document:
+        1. a Package is defined as a folder containing the __init__.py file.
+        2. __init__.py may be empty, or may define additional actions to take while importing, such as to load
+            additional modules, as shown in the Simple Package example
+        3. A "module" in python is simple the file itself, or so it appear. So to get access to SimplePackage/a/bar(),
+            you must do one of the following:
+                a. from SimplePackage import a ; call a.foo
+                b. in __init__, import SimplePackage.a, call SimplePackage.a.foo
+                c. (possible other implementations?)
+
