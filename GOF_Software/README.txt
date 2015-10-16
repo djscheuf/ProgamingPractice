@@ -25,9 +25,9 @@ Chain of Responsibility -- Complete 21AUG2015
 Command -- Complete 20AUG2015
 Interpreter
 Iterator
-Mediator
+Mediator -- Complete 16OCT2015
 Memento -- Complete 21AUG2015
 Observer
 Strategy -- Complete 20FEB2015
-TemplateMethod
+TemplateMethod -- Complete 16OCt2015
 Visitor -- Complete 19AUG2015
