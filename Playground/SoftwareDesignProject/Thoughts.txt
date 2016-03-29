@@ -1,0 +1,44 @@
+_Author_ = DJS
+
+Thoughts:
+
+Vision: A Dwarf-fortress Like ASCII Based game, but instead of dwarves, theme it on AI
+
+Ideas: You (either are, or are helping an AI) reach maturity. As such you start in on some relative network, searching
+for useful algorithms or query data. You'll manage Bots/Processes rather than Dwarves. You'll build Ports and APIs to
+improve your crafting of components. You can 'trade' with Google or other search engines, by producing indexed data,
+from your 'data-mining'.  YOu can build 'native directories' for your Bots to rest in. You can assign bots to direct bots.
+You can create squads to fight Malware, and other viruses, as well as defend yourself against an Anti-virus software sweep.
+
+Concept in DF -- Analog in AI Game
+Dwarves -- Bots
+Craft Stone Good -- Produce Indexed Data
+Ores -- Useful Algorithms / Data
+Stairs -- Links
+Bed -- Directory
+Door -- Lock
+Workshop -- Ports / APIs
+Traders -- Search Engines / Data Loggers
+Sieges -- Anti-virus Sweeps / Viral Infections
+Walls - Firewalls (various types)
+Magma = Automation Suite? (can run away from Bot, but also allow 'fuel-less')
+Water  = System Restore point? ( can wipe out a Bot, but also help heal)
+
+Things need to figure out:
+Active Display and re-skinning
+    - need a visual theme
+Keyboard command monitoring
+    - Possibly add CMD like interface to issue commands
+World Generation
+    - Solidify explanation
+    - Determine resources and uses
+Game Time Scheduling
+    - Event based? (Jump to next Event)
+    - Tick based?
+        -- Adjustable timing?
+    - Play/Pause Feature
+Project Organization
+    - What is the minimum game unit?
+        - Probably can skip random work gen.
+        - Need Display,interface,commands,Bots, Scheduler
+    - How to develop it in parts, and in reasonable time.

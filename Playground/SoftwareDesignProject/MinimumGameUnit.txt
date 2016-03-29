@@ -1,0 +1,57 @@
+Minimum Core Game Unit:
+    - Display of a few depth levels
+    - A Bot or 2 interacting with world, based on "Jobs"
+        -dig    -haul   -build   -consume
+    - Ability to assign/unassign Jobs to Bot
+        - Preference = command interface
+        - nice to have = menu + cmd
+    - Move "items" to stockpiles
+    - Minor Viral fight.
+
+Software components needs:
+    - "Bot"
+        Designation
+        Current Job (time to complete?)
+        Allowed Jobs
+        Position
+        Health
+        Hunger
+    - "Items"
+        Designation
+        Position
+        Icon?
+    - "Enemy"
+        Designation
+        Position
+        Health
+
+    - Map Display
+        - View Area
+        - Depth
+        - Icon lookup?
+        - Display user designation area?
+
+    - Cmd Window/Terminal
+        - Command interpretter
+        Commands:
+            - Help  or /?
+            - list * = list given type ( bots, items,enemies) , gives designation
+            - dig /s:x,y,z /e:x,y,z = dig out a prism from s(x,y,z) to e(x,y,z)
+            - pile /s:x,y /e:x,y /t:* = designate a stockpile in quadrangle s(x,y) to e(x,y) on current depth which accepts given type
+            - build /p:x,y /t:* = build workshop centered on p(x,y) at current depth of a given type
+            - move /u /d /n:* = change depth up or down 1 level or to a particular level given by n
+            - priority /j:* /n:* = change priority of job in Scheduler to number (0 = highest)
+            - scheduler /new /old = sets scheduler parameters to either Newest first, oldest first
+
+    - Scheduler
+        Knows Bots
+        - Used Bot Allowed Jobs to schedule known labor
+        Knows priorities, assigns by Highest to Lowest, Oldest to Newest?
+        Shows Scheduled Tasks and Bot Associated for display.
+
+    - Game "Clock"
+        Manage TPS or Events?
+        Communicate with Scheduler
+            - used to determine complete time.
+        When tick elapses, execute all updates ( change positions, deposit goods, attack, rest, wait on task)
+
