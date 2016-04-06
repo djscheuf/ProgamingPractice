@@ -21,7 +21,7 @@ class FeatureProvider:
                 def call(): return provider
             self.providers[feature] = call
 
-        def __getitem__(self,feature):
+        def __getitem__(self,feature): # allows the array access by [ ], where feature is the index.
             try:
                 provider = self.providers[feature]
             except KeyError:
@@ -36,7 +36,7 @@ class FeatureProvider:
 
             return obj
 
-GlobalFeatureProvider = FeatureProvider()
+GlobalFeatureProvider = FeatureProvider() # provides global level access to Feature Provider.
 
 if __name__ == '__main__':
     print("Sector: Feature Selector")

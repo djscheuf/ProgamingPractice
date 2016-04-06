@@ -11,6 +11,8 @@ Commentary:
     Cons:
         Weak to typographical errors
         Weak typing controls (but that is kind of a python thing)
+        [!]Does not prevent Clients from editting Globally available Features!
+
 
     Mitigations:
         It is possible to code the names apart from the instantiation of Feature
@@ -23,7 +25,3 @@ Commentary:
         The kwArgs method does not prevent the feature value from being changed by the consumers, or otherwise. Further
             this change can be so simple as the assignment, whereas the Feature provider makes this more explicit.
             Additionally the feature provider could be implemented to prevent such an operation altogether.
-
-
-
-

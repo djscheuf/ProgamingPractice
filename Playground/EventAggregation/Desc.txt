@@ -2,7 +2,7 @@ Dependency InjectionEvent Aggregation
     see: https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern
         https://en.wikipedia.org/wiki/Event-driven_programming
 
-I have seen this used in WE, to significantly good effect. It allows for decoupling of senders and handlers
+I have seen this used in [redacted], to significantly good effect. It allows for decoupling of senders and handlers
 or listeners, and for asynchronous execution of various actions.
 
  I believe the same may be achieve in Python with appropriate planning and common name idioms.
@@ -13,7 +13,7 @@ or listeners, and for asynchronous execution of various actions.
     http://pubsub.sourceforge.net/
 
 Commentary:
-    Firstly this was vastly easier than anticipated. In conjuntion with the Feature provider pattern this is a potent
+    Firstly this was vastly easier than anticipated. In conjunction with the Feature provider pattern this is a potent
     programming concept. However, I have not yet tried to use this with a Class function. I suppose it should not be any
     more difficult, but It might. I shall try in an alternative example.
 
@@ -30,3 +30,12 @@ Commentary 3:
 
      Taking some additional thought, I ought to implement the calls to the listener with a copy of the event data rather
      than the original, to prevent accidental collusion.
+
+Commentary 4:
+    I feel I should elaborate on Collusion. In [redacted], I have seen events
+    edited in one listener, and that effect propagate to others. This is
+    not whole-ly undesirable. It can be used for Cancel-able events. However,
+    It is my belief that the vast majority of events are not of this type.
+    Further, since messaging in general is not expected to be bi-directional in
+    the case of the Events, such behavior should be separated, and either presented
+    separately or not at all.

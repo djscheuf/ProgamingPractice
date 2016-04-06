@@ -2,6 +2,14 @@ __author__ = 'DJS'
 
 '''
 Improvement on Existing Demo: Usage of Python Enum as Feature Keys
+
+This allows users of the system to share the global Feature provider and have
+a uniform, and hopefully controller way to request their features. Further,
+If the FeatureProvider is restricted to take only FeatureKey inputs, then
+the users will be unable to ask for Features the the system is unaware of.
+
+This will be a minor inconvinience during new development of features, but provides
+a measure of safety for use of existing ones. (No spelling errors can be made).
 '''
 
 from enum import Enum
@@ -34,4 +42,3 @@ def demonstrateImprovement():
 
 if __name__ == '__main__':
     demonstrateImprovement()
-

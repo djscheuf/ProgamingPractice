@@ -1,7 +1,7 @@
 Dependency Injection:
     see: https://en.wikipedia.org/wiki/Dependency_injection
 
-I have seen this used in WE, to significantly good effect. In addition I found it paired with another practice:
+I have seen this used in [redacted], to significantly good effect. In addition I found it paired with another practice:
 Interface Segregation. WE relies on interfaces to separate the implementation from the usage. This is made possible
  by constructor dependency injection of the necessary interfaces.
 
@@ -15,11 +15,11 @@ Interface Segregation. WE relies on interfaces to separate the implementation fr
     - This example is not strictly DI in format, but achieves DI through a Global python variable.
     And through the use of classes which refer to said variable.
 
-    Generally he has an object which holds other objects for access, so that everyone gets access to the same objects.
+    Generally one has an object which holds other objects for access, so that everyone gets access to the same objects.
     These can then be used to act on the system.
 
 Commentary 2:
-    It occurs to me that one might also beable to achieve DI through the Kwargs variable in the ctors.
-    THe links below provide some basic references for kwarg usage:
+    It occurs to me that one might also be able to achieve DI through the Kwargs variable in the ctors.
+    The links below provide some basic references for kwarg usage:
         http://stackoverflow.com/questions/1769403/understanding-kwargs-in-python
         https://docs.python.org/2/tutorial/controlflow.html#keyword-arguments
