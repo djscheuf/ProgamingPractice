@@ -1,0 +1,21 @@
+* Purpose:
+ This project is intended to be a Simulator for Machikoro. Machikoro is a turn-based, city-building board game.
+
+* Intent:
+ User will be able to run this script/program to test various strategies, and determine their probability to win over a set number of games.
+
+ * MVP:
+  ** User Inputs:
+   + Strategies to Test ( list, min of 2)
+   + Number of games to run
+
+ ** Strategy = end-state of cards
+ ** AI =
+  + If can, purchase city upgrade, least to most expensive
+  + If can, buy a desirable card. Start with least expensive
+  + If have card with value 7+, roll 2 dice, if can
+
+ ** Honor card quantities, and game end conditions for only basic game.
+ ** Ignoring cards of ID 6, which have special behavior.
+
+*** present iteration: 03
