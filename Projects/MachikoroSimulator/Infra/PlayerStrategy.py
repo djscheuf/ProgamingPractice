@@ -1,12 +1,24 @@
 """
 Purpose: The PlayerStrategy represnets, the desired final state of Owned CardEnum.
 
++ utilize it's known end-state, and a given current-state to
+    determine what action to take for the turn ( what cards to buy)
 """
 from .CardEnum import *
 
+_defaultEndState = {
+    CardEnum.WheatField:1,
+    CardEnum.Bakery:1,
+    CardEnum.TrainStation:1,
+    CardEnum.ShoppingMall:1,
+    CardEnum.AmusementPark:1,
+    CardEnum.RadioTower:1
+}
+
 class PlayerStrategy():
     def __init__(self,desiredEndState=None):
-        self.EndState = self._defaultEndState()
+        from copy import deepcopy
+        self.EndState = deepcopy(_defaultEndState)
         self.Deck = None
 
         if(desiredEndState != None):
@@ -15,9 +27,6 @@ class PlayerStrategy():
 
     def InjectDeck(self,deckManager):
         self.Deck = deckManager
-
-    def _defaultEndState(self):
-        return {CardEnum.WheatField:1,CardEnum.Bakery:1,CardEnum.TrainStation:1,CardEnum.ShoppingMall:1,CardEnum.AmusementPark:1,CardEnum.RadioTower:1}
 
     def GetNextPurchase(self,curState):
         #get diffState
@@ -66,7 +75,7 @@ class PlayerStrategy():
 
     def _QueryCardAvailabile(self, nextGet):
         if(self.Deck is not None):
-            available = self.Deck.CArdAvailable(nextGet)
+            available = self.Deck.IsCardAvailable(nextGet)
         else:
             available = True
 
