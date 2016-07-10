@@ -36,9 +36,6 @@ class DeckManager():
         self._deck = deepcopy(_defaultStartingDeck)
 
     def RequestCard(self, card):
-        if card not in self._deck.keys():
-            return False
-
         if not self.IsCardAvailable(card):
             return False
 

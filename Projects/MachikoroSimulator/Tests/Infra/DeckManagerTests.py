@@ -59,7 +59,13 @@ class DeckManagerTests(unittest.TestCase):
         #Arrange
         qCard = CardEnum.TVStation
 
+        for i in range(0,4): # request 4 TVStations, resulting in 0 left
+            self.DeckMgr.RequestCard(qCard)
+
         #Act
+        result = self.DeckMgr.IsCardAvailable(qCard)
+        #Assert
+        self.assertFalse(result)
 
 
 if __name__ == '__main__':

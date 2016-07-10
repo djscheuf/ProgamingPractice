@@ -2,6 +2,7 @@ import unittest
 
 from Infra.CardEnum import *
 import Infra.PlayerStrategy as strat
+import Infra.DeckManager as Mgr
 
 class PlayerStrategyTest(unittest.TestCase):
     def setUp(self):
@@ -54,7 +55,21 @@ class PlayerStrategyTest(unittest.TestCase):
         #Assert
         self.assertEqual(self.cards.Ranch, result)
 
+    def test_WhatToBuyNextReturnsUndefinedWhenNoCardsAvailableThatAreAlsoDesired(self):
+        #Arrange
+        endstate = {self.cards.TVStation:1}
+        pStrat = strat.PlayerStrategy(endstate)
+        curState = {self.cards.WheatField:1,self.cards.Bakery:1}
+        deck = Mgr.DeckManager()
+        pStrat.InjectDeck(deck)
 
+        for i in range(0,4):
+            deck.RequestCard(self.cards.TVStation)
+
+        #Act
+        result = pStrat.GetNextPurchase(curState)
+        #Assert
+        self.assertEqual(self.cards.Undefined, result)
 
 if __name__ == '__main__':
     unittest.main()

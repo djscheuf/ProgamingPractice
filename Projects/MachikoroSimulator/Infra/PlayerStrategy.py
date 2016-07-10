@@ -36,6 +36,12 @@ class PlayerStrategy():
         while( not available):
             #get Cheapest next desired Card
             nextGet = self._findCheapestNextDesired(diffState)
+
+            if(nextGet == CardEnum.Undefined):
+                nextGet = CardEnum.Undefined
+                available = True
+                break
+
             diffState[nextGet] = None # removes next cheapest from possibles, prevents inf loop
 
             available = self._QueryCardAvailabile(nextGet)
@@ -65,9 +71,10 @@ class PlayerStrategy():
         minCost = 1e6 # Arbitrarily Large Number
 
         for key in diffState.keys():
-            if(diffState[key] < minCost):
-                nextCard = key
-                minCost = diffState[key]
+            if(diffState[key] is not None):
+                if(diffState[key] < minCost):
+                    nextCard = key
+                    minCost = diffState[key]
 
         return nextCard
 
@@ -84,6 +91,10 @@ class PlayerStrategy():
 class PlayerStategyFactory():
     def __inint__(self):
         pass
+
+    def DefaultStrategy(self):
+        endState = {}
+        return PlayerStrategy(endState)
 
     def CheeseFactoryStrategy(self):
         endState = {CardEnum.Ranch:3,CardEnum.CheeseFactory:3}
