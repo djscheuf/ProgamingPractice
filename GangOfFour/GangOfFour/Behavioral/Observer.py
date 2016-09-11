@@ -45,7 +45,7 @@ class EuropeanStockMarkets(Observer):
     def update(self,*args, **kwargs):
         print ("ESM received: {0}\n{1}".format(args,kwargs))
 
-if __name__ == "__main__":
+def demonstrate():
     observable = Observable()
 
     asm_Observer = AmericanStockMarkets()
@@ -55,3 +55,6 @@ if __name__ == "__main__":
     observable.register(esm_Observer)
 
     observable.update_observers("Market Rally", something="Hello World")
+
+if __name__ == "__main__":
+    demonstrate()

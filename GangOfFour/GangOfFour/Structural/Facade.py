@@ -51,7 +51,7 @@ class Facade:
         if(self.D.LoginAs(user) and self.C.AttemptLogin(password)):
             print(self.B.Greet())
         else:
-            print("Unable to log-in as: "+user+"With password: "+password)
+            print("Unable to log-in as: "+user+" With password: "+password)
 
 def demonstrate():
     facade = Facade("DJS","exNihilo","Welcome to the Facade: ")
@@ -61,4 +61,3 @@ def demonstrate():
 
 if __name__ == "__main__":
     demonstrate()
-

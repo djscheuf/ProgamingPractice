@@ -42,4 +42,4 @@ def demonstrate():
     demoFoo(3)
 
 if __name__ == '__main__':
-    demonstrate()
+    DecoratorPattern.demonstrate()

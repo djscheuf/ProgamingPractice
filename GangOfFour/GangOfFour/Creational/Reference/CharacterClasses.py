@@ -2,8 +2,8 @@
 Storage for DnD Character Classes, used by Abstract Factory
 '''
 
-from Reference.ReferenceClasses import *
-from Reference.ReferenceFunctions import *
+from .ReferenceClasses import *
+from .ReferenceFunctions import *
 
 class CharacterClass:
     # edition - should dictate how to create class and its values.

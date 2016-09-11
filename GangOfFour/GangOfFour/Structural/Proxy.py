@@ -55,22 +55,28 @@ class SecurityProxy():
         return lambda: None # returns callable that does nothing...
 
 def demonstrate():
+    print("*Using unproxied class, get A attribute")
     rgb = RGB(100,192,240)
-    print(rgb.Red())
+    print(rgb.Blue())
 
+    print("*Using proxied class, get A attribute")
     proxy = ExampleProxy(rgb)
-    print(proxy.Green())
+    print(proxy.Blue())
 
+    print("*Using unproxied class, get existing property and override A attribute")
     noBlue = NoBlueProxy(rgb)
     print(noBlue.Green())
     print(noBlue.Blue())
 
+    print("*Using Security Proxy, attempt to get attribute, fail because not logged in")
     secure = SecurityProxy(rgb)
     secure.Red()
 
+    print("*Using Security Proxy, attempt to get attribute, fail because bad login")
     secure.Login("BJT")
     secure.Blue()
 
+    print("*Using Security Proxy, attempt to get attribute, pass because good login")
     secure.Login("DJS")
     val = secure.Green()
     print(val)

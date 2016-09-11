@@ -7,7 +7,7 @@ Intent: Separate the steps for constructing of a complex object from its final r
 (b) avoid hard-to-remember/understand chatty constructors with many arguments, and
 (c) where possible allow the caller to reuse steps for creating similar instances.
 '''
-from Reference.CharacterClasses import *
+from .Reference.CharacterClasses import *
 
 class Character:
     def __init__(self,characterClass):

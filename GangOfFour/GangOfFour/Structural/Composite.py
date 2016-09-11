@@ -54,4 +54,4 @@ def demonstrate():
         comp.display()
 
 if __name__ == '__main__':
-    demonstrate()
+    CompositePattern.demonstrate()

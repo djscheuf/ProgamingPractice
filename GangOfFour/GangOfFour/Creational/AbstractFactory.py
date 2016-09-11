@@ -14,7 +14,8 @@ For this implementation, we will assume the circumstance of a DnD application, s
 basically any enemy based on a class. We will create a ClassFactory, which will instantiate the correct class based on
 input parameters.
 '''
-from Reference.CharacterClasses import *
+from .Reference.CharacterClasses import *
+from .Reference.ReferenceClasses import *
 
 class CharacterClassFactory:
     # edition - representation of the Game Edition to Create Classes for

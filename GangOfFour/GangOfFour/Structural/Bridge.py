@@ -48,7 +48,6 @@ class Impl2(Interface):
     def FunctionToCall(self):
         print("Linux")
 
-
 def demonstrate():
     linux = Impl2()
     win = Impl1()
@@ -66,4 +65,4 @@ def demonstrate():
     us1Lin.FunctionToCall()
 
 if __name__ == "__main__":
-    demonstrate()
+    BridgePattern.demonstrate()

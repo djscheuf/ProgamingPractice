@@ -107,8 +107,9 @@ def TransactionalDemo(n):
         n.DoStuff()
     except:
         print("-- doing stuff failed...")
-        import traceback
-        traceback.print_exc(0)
+        # commented out for ease of demonstration
+        #import traceback
+        #traceback.print_exc(0)
         pass
 
     print(n)

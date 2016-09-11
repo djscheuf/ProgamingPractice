@@ -25,8 +25,11 @@ class Eggs():
 
 def demonstrate():
     # recall that these are separate calls to the class constructors.
+    print("Asserting to two calls to constructor with same args, returns pointer to same instance.")
     assert Spam(1,2) is Spam(1,2)
     assert Eggs('a', 'b') is Eggs('a', 'b')
+    print("Asserting to two calls to differentc classes with same args, does not return pointer to same instace")
+    print("\t( as expected, but proves no black magic)")
     assert Spam(1,2) is not Eggs(1,2)
 
     #cannot subclass.

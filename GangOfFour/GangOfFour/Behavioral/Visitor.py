@@ -23,6 +23,7 @@ class DemoVisitor(IVisitor):
         print(self, " was called by:", caller)
 
 class DemoVisitable(IVisitable): pass
+
 def demonstrate():
     visitable = DemoVisitable()
     visitor = DemoVisitor()
