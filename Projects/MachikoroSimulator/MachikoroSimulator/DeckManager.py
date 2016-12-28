@@ -1,13 +1,11 @@
 """
 Purpose: The DeckManager will:
     + track purchased/available cards
-    + card prices?
     + support PlayerBot card purchases
 
 Knows:
     + Total Available per type
     + Current Available per type
-    + Card prices
 """
 
 from .CardEnum import *
@@ -30,21 +28,34 @@ _defaultStartingDeck = {
     CardEnum.FruitAndVegetableStand:6
 }
 
+
+
 class DeckManager():
     def __init__(self):
         from copy import deepcopy
         self._deck = deepcopy(_defaultStartingDeck)
 
-    def RequestCard(self, card):
-        if not self.IsCardAvailable(card):
-            return False
-
-        self._deck[card] -=1
-        return True
-
-    def IsCardAvailable(self,card):
+    def _IsCardAvailable(self,card):
+        """Returns boolean flag of card availablity."""
         if card not in self._deck.keys():
             return False
 
         cnt = self._deck[card]
         return cnt>0
+
+    def RequestCard(self,card):
+        """Request a card from the deck. If available it is awarded, if not, then denied"""
+        if not self._IsCardAvailable(card):
+            return False
+
+        self._deck[card] -=1
+        return True
+
+    def GetAvailableCards(self):
+        result = []
+
+        for key in self._deck.keys():
+            if self._deck[key] > 0:
+                result.add(key)
+
+        return result

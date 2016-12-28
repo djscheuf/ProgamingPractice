@@ -1,5 +1,5 @@
 """
-Purpose: The PlayerStrategy represnets, the desired final state of Owned CardEnum.
+Purpose: The Stategy represnets, the desired final state of Owned cards.
 
 + utilize it's known end-state, and a given current-state to
     determine what action to take for the turn ( what cards to buy)
@@ -15,7 +15,7 @@ _defaultEndState = {
     CardEnum.RadioTower:1
 }
 
-class PlayerStrategy():
+class Strategy():
     def __init__(self,desiredEndState=None):
         from copy import deepcopy
         self.EndState = deepcopy(_defaultEndState)
@@ -25,10 +25,15 @@ class PlayerStrategy():
             for key in desiredEndState.keys():
                 self.EndState[key] = desiredEndState[key]
 
-    def InjectDeck(self,deckManager):
-        self.Deck = deckManager
+    def HowManyToRoll(self, state):
+        """Returns how many dice to roll. If have trainstation always roll 2"""
+        if(state[CardEnum.TrainStation] > 0):
+            return 2
 
-    def GetNextPurchase(self,curState):
+        return 1
+
+    def PurchaseCard(self,state,availableCards):
+        """Returns card to purchase, or NoCard"""
         #get diffState
         diffState = self._createDiffState(curState)
 
@@ -37,18 +42,20 @@ class PlayerStrategy():
             #get Cheapest next desired Card
             nextGet = self._findCheapestNextDesired(diffState)
 
-            if(nextGet == CardEnum.Undefined):
-                nextGet = CardEnum.Undefined
+            if(nextGet == CardEnum.NoCard):
+                nextGet = CardEnum.NoCard
                 available = True
                 break
 
             diffState[nextGet] = None # removes next cheapest from possibles, prevents inf loop
 
-            available = self._QueryCardAvailabile(nextGet)
+            if nextGet is in availableCards:
+                available = True
 
         return nextGet
 
     def _createDiffState(self,curState):
+        """Determines difference between current and desired states"""
         diffState = {}
         for key in self.EndState.keys():
             curCnt = 0
@@ -64,6 +71,7 @@ class PlayerStrategy():
         return diffState
 
     def _findCheapestNextDesired(self,diffState):
+        """Finds the next cheapest card that is desirable to purchase"""
         # search for min within in Dict
         # may optimize later
 
@@ -80,32 +88,22 @@ class PlayerStrategy():
 
         #[OTMZ] - tagged for optimization
 
-    def _QueryCardAvailabile(self, nextGet):
-        if(self.Deck is not None):
-            available = self.Deck.IsCardAvailable(nextGet)
-        else:
-            available = True
-
-        return available
-
-class PlayerStategyFactory():
+class StategyFactory():
     def __inint__(self):
         pass
 
     def DefaultStrategy(self):
         endState = {}
-        return PlayerStrategy(endState)
+        return Strategy(endState)
 
     def CheeseFactoryStrategy(self):
         endState = {CardEnum.Ranch:3,CardEnum.CheeseFactory:3}
-        return PlayerStrategy(endState)
+        return Strategy(endState)
 
     def FurnitureFactoryStrategy(self):
         endState = {CardEnum.Forest:3,CardEnum.FurnitureFactory:3}
-        return PlayerStrategy(endState)
+        return Strategy(endState)
 
     def MyStrategy(self):
-        endState = {CardEnum.Ranch:2, CardEnum.Bakery:2, CardEnum.FamilyRestaurant:2,CardEnum.CheeseFactory:2,CardEnum.Forest:2,CardEnum.FurnitureFactory:2}
-        return PlayerStrategy(endState)
-
-StratFactory = PlayerStategyFactory()
+        endState = {CardEnum.Ranch:2, CardEnum.Bakery:2, CardEnum.ConvenienceStore:2,CardEnum.Mine:2,CardEnum.CheeseFactory:2,CardEnum.Forest:2,CardEnum.FurnitureFactory:2}
+        return Strategy(endState)

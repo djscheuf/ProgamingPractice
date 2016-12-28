@@ -5,7 +5,7 @@ Purpose: The CardEnum represents the available cards for player strategies, and 
 from enum import IntEnum
 
 class CardEnum(IntEnum):
-    Undefined = -1
+    NoCard = -1
     WheatField = 0
     Ranch = 2
     Bakery = 3
@@ -27,6 +27,7 @@ class CardEnum(IntEnum):
     AmusementPark=93
     RadioTower=94
 
+"""Card Costs and types of cards are common knowledge to all elements"""
 CardCosts = {
     CardEnum.WheatField:1,
     CardEnum.Ranch:1,

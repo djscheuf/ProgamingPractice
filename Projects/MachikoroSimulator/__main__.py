@@ -21,16 +21,16 @@ def routine():
         print("Invalid number of games. Exiting.")
         return
 
-    # Route to Simulator
-    #aiList = AiReader(aifilename);
-    aiList = {}
-    simulation = Simulator.Simulator(aiList,gameCnt)
+    #Init Game and Simulator settings
+    print("Initing AIs")
+    print("Allocating Game Engine")
+    print("Wiring Game")
+    print("Preparing Simulator")
+
 
     print("Run Simulator")
-    simulation.Run()
-
-    results = simulation.Results
     # Present Results
+    
 
 
 if __name__ == "__main__":
