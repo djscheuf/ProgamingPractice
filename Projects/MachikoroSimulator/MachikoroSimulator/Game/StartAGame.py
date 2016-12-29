@@ -1,5 +1,6 @@
-from PlayerContext import PlayerContext
+from .PlayerContext import PlayerContext
 
-class StartAGame():
+
+class StartAGame:
     def With(firstBot, secondBot):
-        return PlayerContext(firstBot,secondBot)
+        return PlayerContext(firstBot, secondBot)

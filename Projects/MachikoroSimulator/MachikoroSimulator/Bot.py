@@ -1,6 +1,7 @@
 """
 Purpose: A Bot is the element which knows how ot use a strategy.
-  It contains the state a given strategy acts upon, and provides the desicions to the game engine.
+  It contains the state a given strategy acts upon, and provides the desicions
+      to the game engine.
 
 Has a strategy
 Knows Bot's current state:
@@ -12,12 +13,14 @@ Decides:
   - - Purchase what? (which card)
 """
 
-class BotState():
-    def __init__():
+
+class BotState:
+    def __init__(self):
         self.Deck = {}
         self.Money = 0
 
-class Bot():
+
+class Bot:
     def __init__(self):
         self._state = None
         self._strategy = None
@@ -40,4 +43,4 @@ class Bot():
 
     def PurchaseCard(self, availableCards):
         """Returns card to purchase or NoCard if undesired."""
-        return self._strategy.PurchaseCard(self._state,availableCards)
+        return self._strategy.PurchaseCard(self._state, availableCards)
