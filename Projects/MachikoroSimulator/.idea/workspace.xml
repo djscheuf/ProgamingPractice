@@ -2,19 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4071d632-d067-4a8c-aa65-ee25e3d79667" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/Bot.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/Bot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/CardEnum.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/CardEnum.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/DeckManager.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/DeckManager.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachikoroSimulator/Engine/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachikoroSimulator/Tests/Game/__init__.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MachikoroSimulator/Tests/Infra/DeckManagerTests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MachikoroSimulator/Tests/Infra/Infra" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MachikoroSimulator/Tests/Infra/PlayerBotTests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MachikoroSimulator/Tests/Infra/PlayerStrategyTest.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MachikoroSimulator/Tests/Infra/SimulationConductorTest.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MachikoroSimulator/Tests/UI/UI" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/Engine/DeclareAnEngine.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/Engine/DeclareAnEngine.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/Engine/Engine.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/Engine/Engine.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/Engine/InitializedEngineContext.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/Engine/InitializedEngineContext.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/Game/Game.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/Game/Game.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/Game/PlayerContext.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/Game/PlayerContext.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/Game/StartAGame.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/Game/StartAGame.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/Simulator.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/Simulator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/Strategy.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/Strategy.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/__init__.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/__main__.py" afterPath="$PROJECT_DIR$/__main__.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,6 +30,13 @@
   <component name="FileEditorManager">
     <leaf />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
@@ -42,11 +49,12 @@
         <option value="$PROJECT_DIR$/MachikoroSimulator/Strategy.py" />
         <option value="$PROJECT_DIR$/MachikoroSimulator/Game/PlayerContext.py" />
         <option value="$PROJECT_DIR$/MachikoroSimulator/Game/StartAGame.py" />
-        <option value="$PROJECT_DIR$/MachikoroSimulator/Engine/DeclareAnEngine.py" />
         <option value="$PROJECT_DIR$/MachikoroSimulator/Engine/InitializedEngineContext.py" />
         <option value="$PROJECT_DIR$/MachikoroSimulator/Game/Game.py" />
         <option value="$PROJECT_DIR$/MachikoroSimulator/CardEnum.py" />
+        <option value="$PROJECT_DIR$/MachikoroSimulator/Engine/DeclareAnEngine.py" />
         <option value="$PROJECT_DIR$/MachikoroSimulator/Engine/Engine.py" />
+        <option value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py" />
       </list>
     </option>
   </component>
@@ -56,7 +64,9 @@
     <option name="width" value="1616" />
     <option name="height" value="876" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -73,6 +83,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -96,6 +107,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MachikoroSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MachikoroSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MachikoroSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MachikoroSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MachikoroSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MachikoroSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MachikoroSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Engine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -137,14 +188,123 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Unittests in EngineTest">
+    <configuration default="false" name="Unittests in EngineTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MachikoroSimulator" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py" />
+      <option name="CLASS_NAME" value="EngineTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest EngineTest.test_EarnsMoney_FromGreenOnlyOnTurn" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MachikoroSimulator" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py" />
+      <option name="CLASS_NAME" value="EngineTest" />
+      <option name="METHOD_NAME" value="test_EarnsMoney_FromGreenOnlyOnTurn" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest EngineTest.test_EarnsMoney_Zero_IfNoActivation" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MachikoroSimulator" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py" />
+      <option name="CLASS_NAME" value="EngineTest" />
+      <option name="METHOD_NAME" value="test_EarnsMoney_Zero_IfNoActivation" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest EngineTest.test_EarnsMoney_FromRedsOnlyOffTurn" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MachikoroSimulator" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py" />
+      <option name="CLASS_NAME" value="EngineTest" />
+      <option name="METHOD_NAME" value="test_EarnsMoney_FromRedsOnlyOffTurn" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest EngineTest.test_EarnsMoney_FromCheeseFactory" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MachikoroSimulator" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py" />
+      <option name="CLASS_NAME" value="EngineTest" />
+      <option name="METHOD_NAME" value="test_EarnsMoney_FromCheeseFactory" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -279,9 +439,28 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in EngineTest" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest EngineTest.test_EarnsMoney_FromGreenOnlyOnTurn" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest EngineTest.test_EarnsMoney_Zero_IfNoActivation" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest EngineTest.test_EarnsMoney_FromRedsOnlyOffTurn" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest EngineTest.test_EarnsMoney_FromCheeseFactory" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in EngineTest" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest EngineTest.test_EarnsMoney_FromCheeseFactory" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest EngineTest.test_EarnsMoney_FromGreenOnlyOnTurn" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest EngineTest.test_EarnsMoney_FromRedsOnlyOffTurn" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest EngineTest.test_EarnsMoney_Zero_IfNoActivation" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -293,34 +472,80 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="Unittest_EngineTest_test_EarnsMoney_FromCheeseFactory - 2017.01.05 at 12h 14m 55s.xml">
+      <configuration name="Unittest EngineTest.test_EarnsMoney_FromCheeseFactory" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_EngineTest_test_EarnsMoney_FromGreenOnlyOnTurn - 2017.01.05 at 12h 11m 13s.xml">
+      <configuration name="Unittest EngineTest.test_EarnsMoney_FromGreenOnlyOnTurn" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_EngineTest_test_EarnsMoney_FromGreenOnlyOnTurn - 2017.01.05 at 12h 11m 34s.xml">
+      <configuration name="Unittest EngineTest.test_EarnsMoney_FromGreenOnlyOnTurn" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_EngineTest - 2017.01.05 at 12h 10m 11s.xml">
+      <configuration name="Unittests in EngineTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_EngineTest - 2017.01.05 at 12h 12m 03s.xml">
+      <configuration name="Unittests in EngineTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_EngineTest - 2017.01.05 at 12h 13m 55s.xml">
+      <configuration name="Unittests in EngineTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_EngineTest - 2017.01.05 at 12h 14m 10s.xml">
+      <configuration name="Unittests in EngineTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_EngineTest - 2017.01.05 at 12h 15m 12s.xml">
+      <configuration name="Unittests in EngineTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_EngineTest - 2017.01.05 at 12h 17m 36s.xml">
+      <configuration name="Unittests in EngineTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_EngineTest - 2017.01.05 at 12h 18m 53s.xml">
+      <configuration name="Unittests in EngineTest" configurationId="tests" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39895698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py</url>
+          <line>136</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="9" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -336,7 +561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -352,7 +576,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Game/StartAGame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="40" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Game/Game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="93" column="35" lean-forward="true" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Tests/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Engine/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Engine/DeclareAnEngine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -364,24 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Game/StartAGame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="40" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Engine/DeclareAnEngine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Engine/InitializedEngineContext.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -390,48 +643,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Bot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="43" column="20" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Engine/Engine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#3417#3567#0" expanded="false" />
-            <element signature="e#3638#3886#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MachikoroSimulator/CardEnum.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="85">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MachikoroSimulator/DeckManager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="25" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="25" />
+        <state relative-caret-position="-374">
+          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Game/Game.py">
+    <entry file="file://C:/_Tools/Python3/Lib/contextlib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="93" column="35" lean-forward="true" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
+        <state relative-caret-position="161">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/_Tools/Python3/Lib/unittest/suite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/utrunner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="181" column="15" lean-forward="true" selection-start-line="181" selection-start-column="15" selection-end-line="181" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/tcunittest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="261" column="0" lean-forward="false" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="31" column="29" lean-forward="false" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/_Tools/Python3/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="614" column="33" lean-forward="false" selection-start-line="614" selection-start-column="33" selection-end-line="614" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="162" column="0" lean-forward="true" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#785#847#0" expanded="false" />
+            <element signature="e#882#1184#0" expanded="false" />
+            <element signature="e#1241#1423#0" expanded="false" />
+            <element signature="e#1481#1799#0" expanded="false" />
+            <element signature="e#1855#2001#0" expanded="false" />
+            <element signature="e#2047#2172#0" expanded="false" />
+            <element signature="e#2227#2536#0" expanded="false" />
+            <element signature="e#2595#2976#0" expanded="false" />
+            <element signature="e#3035#3186#0" expanded="false" />
+            <element signature="e#3247#3578#0" expanded="false" />
+            <element signature="e#3637#3971#0" expanded="false" />
+            <element signature="e#4032#4419#0" expanded="false" />
+            <element signature="e#4480#4851#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Engine/Engine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#2099#2411#0" expanded="false" />
+            <element signature="e#2455#2763#0" expanded="false" />
+            <element signature="e#2825#3092#0" expanded="false" />
+            <element signature="e#3148#3789#0" expanded="false" />
+            <element signature="e#3851#4006#0" expanded="false" />
+            <element signature="e#4076#4505#0" expanded="false" />
+            <element signature="e#4560#5013#0" expanded="false" />
+            <element signature="e#5063#5177#0" expanded="false" />
+            <element signature="e#5231#5687#0" expanded="false" />
           </folding>
         </state>
       </provider>

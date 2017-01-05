@@ -4,7 +4,7 @@ from .InitializedEngineContext import InitializedEngineContext
 
 class DeclareAnEngine:
     # May need more context for the engine ( needs a win condition)
-    def WhoseInitialStateIs(deck, money):
+    def WhoseInitialStateIs(self,deck, money):
         """provides initialization context for an engine"""
         state = BotState()
         state.Deck = deck

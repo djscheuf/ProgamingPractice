@@ -16,7 +16,7 @@ Factories = {CardEnum.CheeseFactory, CardEnum.FurnitureFactory,
 
 Reds = {CardEnum.Cafe, CardEnum.FamilyRestaurant}
 
-Activations = {1: [CardEnum.WheatField], 2: [CardEnum.Ranch, CardEnum.Bakery], 3: [CardEnum.Cafe],
+Activations = {1: [CardEnum.WheatField], 2: [CardEnum.Ranch, CardEnum.Bakery], 3: [CardEnum.Cafe, CardEnum.Bakery],
                4: [CardEnum.ConvenienceStore], 5: [CardEnum.Forest], 6: [],
                7: [CardEnum.CheeseFactory], 8: [CardEnum.FurnitureFactory], 9: [CardEnum.Mine],
                10: [CardEnum.AppleOrchard, CardEnum.FamilyRestaurant], 11: [CardEnum.FruitAndVegetableStand], 12: [CardEnum.FruitAndVegetableStand]}
@@ -24,12 +24,18 @@ Activations = {1: [CardEnum.WheatField], 2: [CardEnum.Ranch, CardEnum.Bakery], 3
 SimpleValues = {CardEnum.WheatField: 1, CardEnum.Bakery: 1,
                 CardEnum.Ranch: 1, CardEnum.ConvenienceStore: 3,
                 CardEnum.Forest: 1, CardEnum.Mine: 5,
-                CardEnum.AppleOrchard: 3}
+                CardEnum.AppleOrchard: 3, CardEnum.Cafe: 1,
+                CardEnum.FamilyRestaurant: 3}
 
 FactoryMultiplierCards = {CardEnum.CheeseFactory: [CardEnum.Ranch],
                           CardEnum.FurnitureFactory: [CardEnum.Forest, CardEnum.Mine],
                           CardEnum.FruitAndVegetableStand: [CardEnum.WheatField, CardEnum.AppleOrchard]
                           }
+
+FactoryMultiplierValues = { CardEnum.CheeseFactory: 3, CardEnum.FurnitureFactory: 3,
+                            CardEnum.FruitAndVegetableStand: 2}
+
+
 
 class Engine:
     def __init__(self, initialPlayerState, deck):
@@ -43,18 +49,24 @@ class Engine:
 
     def WinConditionMet(self, players):
         """Evaluates all player states for one matching the win condition"""
+        if players is None:
+            return False
+
         for player in players:
-            state = player.CurrentState
-            if all(k in state for k in RequiredImprovements):
+            state = player.CurrentState()
+            if all(k in state.Deck for k in RequiredImprovements):
                 return True
 
         return False
 
     def GetWinner(self, players):
         """Returns first player who matches the win condition or None"""
+        if players is None:
+            return None
+
         for player in players:
-            state = player.CurrentState
-            if all(k in state for k in RequiredImprovements):
+            state = player.CurrentState()
+            if all(k in state.Deck for k in RequiredImprovements):
                 return player
 
         return None
@@ -78,6 +90,9 @@ class Engine:
         activated = Activations[roll]
         for card in activated:
             if card in Greens:
+                if card not in state.Deck.keys():
+                    continue
+
                 if card not in Factories:
                     result += self._SimpleValueCalculation(state, card)
                 else:
@@ -86,26 +101,33 @@ class Engine:
 
     def _SimpleValueCalculation(self, state, card):
         """Returns value earned from simple value cards"""
+        count = state.Deck[card]
         multiplier = SimpleValues[card]
-        count = state[card]
         return multiplier*count
 
-    def _FactoryValueCalculations(self, state, factoryCard):
+    def _FactoryValueCalculation(self, state, factoryCard):
         """Returns value earned from Factorys and their multipliers"""
-        multiplier = 0
+        multipleCount = 0
         for card in FactoryMultiplierCards[factoryCard]:
-            multiplier += state[card]
+            if card not in state.Deck.keys():
+                continue
+            else:
+                multipleCount += state.Deck[card]
 
-        count = state[factoryCard]
+        multiplier = multipleCount*FactoryMultiplierValues[factoryCard]
+        count = state.Deck[factoryCard]
         return multiplier*count
 
-    def _EarnsWithBlues(self, state, roll):
+    def _EarnedWithBlues(self, state, roll):
         """Returns value earned by blue cards"""
         # I recognize that this is technically a repeat of the reds, but with a different filter. May try to extract later.
         result = 0
         activated = Activations[roll]
         for card in activated:
             if card in Blues:
+                if card not in state.Deck.keys():
+                    continue
+
                 result += self._SimpleValueCalculation(state, card)
 
         return result
@@ -114,13 +136,16 @@ class Engine:
         """Returns money the player steals, since it is not their turn"""
         return self._EarnedWithReds(state, roll)
 
-    def _EarnsWithReds(self, state, roll):
+    def _EarnedWithReds(self, state, roll):
         """Returns value pseudo-earned by red cards"""
         # I recognize that this is technically a repeat of the blues, but with a different filter. May try to extract later.
         result = 0
         activated = Activations[roll]
         for card in activated:
             if card in Reds:
+                if card not in state.Deck.keys():
+                    break
+
                 result += self._SimpleValueCalculation(state, card)
 
         return result
