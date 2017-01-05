@@ -17,5 +17,5 @@ class PlayerContext():
         self._players.add(player)
         self._count += 1
 
-    def Using(self, engine):
-        return Game(self._players, engine)
+    def Using(self, engine, deck):
+        return Game(self._players, engine, deck)

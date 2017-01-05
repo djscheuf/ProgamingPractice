@@ -18,10 +18,9 @@ _defaultEndState = {
 
 
 class Strategy:
-    def __init__(self, desiredEndState: object = None):
+    def __init__(self, desiredEndState = None):
         from copy import deepcopy
         self.EndState = deepcopy(_defaultEndState)
-        self.Deck = None
 
         if desiredEndState is not None:
             for key in desiredEndState.keys():
@@ -29,7 +28,7 @@ class Strategy:
 
     def HowManyToRoll(self, state):
         """Returns how many dice to roll. If have train station always roll 2"""
-        if state[CardEnum.TrainStation] > 0:
+        if CardEnum.TrainStation in state.Deck.keys() and state.Deck[CardEnum.TrainStation] > 0:
             return 2
 
         return 1
@@ -63,7 +62,7 @@ class Strategy:
         for key in list(self.EndState.keys()):
             curCnt = 0
             try:
-                curCnt = curState[key]
+                curCnt = curState.Deck[key]
             except KeyError:
                 pass
 
@@ -78,7 +77,7 @@ class Strategy:
         # search for min within in Dict
         # may optimize later
 
-        nextCard = CardEnum.Undefined
+        nextCard = CardEnum.NoCard
         minCost = 1e6  # Arbitrarily Large Number
 
         for key in list(diffState.keys()):

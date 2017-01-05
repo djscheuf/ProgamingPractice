@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4071d632-d067-4a8c-aa65-ee25e3d79667" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachikoroSimulator/Engine/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachikoroSimulator/Tests/Game/__init__.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MachikoroSimulator/Tests/Infra/DeckManagerTests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MachikoroSimulator/Tests/Infra/Infra" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MachikoroSimulator/Tests/Infra/PlayerBotTests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MachikoroSimulator/Tests/Infra/PlayerStrategyTest.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MachikoroSimulator/Tests/Infra/SimulationConductorTest.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MachikoroSimulator/Tests/UI/UI" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachikoroSimulator/Tests/BotTest.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachikoroSimulator/Tests/Game/GameTest.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachikoroSimulator/Tests/StrategyTest.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MachikoroSimulator/Engine/InitializedEngineContext.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/Bot.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/Bot.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/Engine/DeclareAnEngine.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/Engine/DeclareAnEngine.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/Engine/Engine.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/Engine/Engine.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/Game/Game.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/Game/Game.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/Game/PlayerContext.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/Game/PlayerContext.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachikoroSimulator/Strategy.py" afterPath="$PROJECT_DIR$/MachikoroSimulator/Strategy.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,7 +26,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -37,24 +35,33 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Deck</find>
+      <find>self.Deck</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/MachikoroSimulator/Bot.py" />
         <option value="$PROJECT_DIR$/MachikoroSimulator/DeckManager.py" />
         <option value="$PROJECT_DIR$/MachikoroSimulator/Simulator.py" />
-        <option value="$PROJECT_DIR$/MachikoroSimulator/Strategy.py" />
-        <option value="$PROJECT_DIR$/MachikoroSimulator/Game/PlayerContext.py" />
         <option value="$PROJECT_DIR$/MachikoroSimulator/Game/StartAGame.py" />
         <option value="$PROJECT_DIR$/MachikoroSimulator/Engine/InitializedEngineContext.py" />
-        <option value="$PROJECT_DIR$/MachikoroSimulator/Game/Game.py" />
         <option value="$PROJECT_DIR$/MachikoroSimulator/CardEnum.py" />
-        <option value="$PROJECT_DIR$/MachikoroSimulator/Engine/DeclareAnEngine.py" />
-        <option value="$PROJECT_DIR$/MachikoroSimulator/Engine/Engine.py" />
         <option value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py" />
+        <option value="$PROJECT_DIR$/MachikoroSimulator/Engine/DeclareAnEngine.py" />
+        <option value="$PROJECT_DIR$/MachikoroSimulator/Game/PlayerContext.py" />
+        <option value="$PROJECT_DIR$/MachikoroSimulator/Engine/Engine.py" />
+        <option value="$PROJECT_DIR$/MachikoroSimulator/Game/Game.py" />
+        <option value="$PROJECT_DIR$/MachikoroSimulator/Tests/Game/GameTest.py" />
+        <option value="$PROJECT_DIR$/MachikoroSimulator/Tests/BotTest.py" />
+        <option value="$PROJECT_DIR$/MachikoroSimulator/Bot.py" />
+        <option value="$PROJECT_DIR$/MachikoroSimulator/Strategy.py" />
+        <option value="$PROJECT_DIR$/MachikoroSimulator/Tests/StrategyTest.py" />
       </list>
     </option>
   </component>
@@ -142,28 +149,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MachikoroSimulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MachikoroSimulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MachikoroSimulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Game" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -194,19 +179,41 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in EngineTest">
-    <configuration default="false" name="Unittests in EngineTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittests in StrategyTest">
+    <configuration default="false" name="Unittests in BotTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachikoroSimulator/Tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MachikoroSimulator" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py" />
-      <option name="CLASS_NAME" value="EngineTest" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachikoroSimulator/Tests/BotTest.py" />
+      <option name="CLASS_NAME" value="BotTest" />
+      <option name="METHOD_NAME" value="test_Init" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in StrategyTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachikoroSimulator/Tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MachikoroSimulator" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachikoroSimulator/Tests/StrategyTest.py" />
+      <option name="CLASS_NAME" value="StrategyTest" />
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_CLASS" />
@@ -217,19 +224,19 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest EngineTest.test_EarnsMoney_FromGreenOnlyOnTurn" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittest StrategyTest.test_DiffState_ReturnsNoneIfHaveAll" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachikoroSimulator/Tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MachikoroSimulator" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py" />
-      <option name="CLASS_NAME" value="EngineTest" />
-      <option name="METHOD_NAME" value="test_EarnsMoney_FromGreenOnlyOnTurn" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachikoroSimulator/Tests/StrategyTest.py" />
+      <option name="CLASS_NAME" value="StrategyTest" />
+      <option name="METHOD_NAME" value="test_DiffState_ReturnsNoneIfHaveAll" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -239,19 +246,19 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest EngineTest.test_EarnsMoney_Zero_IfNoActivation" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittest StrategyTest.test_DiffState_ReturnsMissingCards" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachikoroSimulator/Tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MachikoroSimulator" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py" />
-      <option name="CLASS_NAME" value="EngineTest" />
-      <option name="METHOD_NAME" value="test_EarnsMoney_Zero_IfNoActivation" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachikoroSimulator/Tests/StrategyTest.py" />
+      <option name="CLASS_NAME" value="StrategyTest" />
+      <option name="METHOD_NAME" value="test_DiffState_ReturnsMissingCards" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -261,41 +268,19 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest EngineTest.test_EarnsMoney_FromRedsOnlyOffTurn" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittest StrategyTest.test_PurchaseCard_ReturnsCheapestMissingAndAvailableCard" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachikoroSimulator/Tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MachikoroSimulator" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py" />
-      <option name="CLASS_NAME" value="EngineTest" />
-      <option name="METHOD_NAME" value="test_EarnsMoney_FromRedsOnlyOffTurn" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittest EngineTest.test_EarnsMoney_FromCheeseFactory" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="MachikoroSimulator" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py" />
-      <option name="CLASS_NAME" value="EngineTest" />
-      <option name="METHOD_NAME" value="test_EarnsMoney_FromCheeseFactory" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MachikoroSimulator/Tests/StrategyTest.py" />
+      <option name="CLASS_NAME" value="StrategyTest" />
+      <option name="METHOD_NAME" value="test_PurchaseCard_ReturnsCheapestMissingAndAvailableCard" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -440,19 +425,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in EngineTest" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest EngineTest.test_EarnsMoney_FromGreenOnlyOnTurn" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest EngineTest.test_EarnsMoney_Zero_IfNoActivation" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest EngineTest.test_EarnsMoney_FromRedsOnlyOffTurn" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest EngineTest.test_EarnsMoney_FromCheeseFactory" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in BotTest" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in StrategyTest" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest StrategyTest.test_DiffState_ReturnsNoneIfHaveAll" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest StrategyTest.test_DiffState_ReturnsMissingCards" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest StrategyTest.test_PurchaseCard_ReturnsCheapestMissingAndAvailableCard" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in EngineTest" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest EngineTest.test_EarnsMoney_FromCheeseFactory" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest EngineTest.test_EarnsMoney_FromGreenOnlyOnTurn" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest EngineTest.test_EarnsMoney_FromRedsOnlyOffTurn" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest EngineTest.test_EarnsMoney_Zero_IfNoActivation" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in StrategyTest" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest StrategyTest.test_PurchaseCard_ReturnsCheapestMissingAndAvailableCard" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest StrategyTest.test_DiffState_ReturnsMissingCards" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest StrategyTest.test_DiffState_ReturnsNoneIfHaveAll" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in BotTest" />
       </list>
     </recent_temporary>
   </component>
@@ -473,35 +458,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_EngineTest_test_EarnsMoney_FromCheeseFactory - 2017.01.05 at 12h 14m 55s.xml">
-      <configuration name="Unittest EngineTest.test_EarnsMoney_FromCheeseFactory" configurationId="tests" />
+    <history-entry file="Unittest_StrategyTest_test_DiffState_ReturnsMissingCards - 2017.01.05 at 15h 10m 18s.xml">
+      <configuration name="Unittest StrategyTest.test_DiffState_ReturnsMissingCards" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_EngineTest_test_EarnsMoney_FromGreenOnlyOnTurn - 2017.01.05 at 12h 11m 13s.xml">
-      <configuration name="Unittest EngineTest.test_EarnsMoney_FromGreenOnlyOnTurn" configurationId="tests" />
+    <history-entry file="Unittest_StrategyTest_test_DiffState_ReturnsNoneIfHaveAll - 2017.01.05 at 15h 05m 11s.xml">
+      <configuration name="Unittest StrategyTest.test_DiffState_ReturnsNoneIfHaveAll" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_EngineTest_test_EarnsMoney_FromGreenOnlyOnTurn - 2017.01.05 at 12h 11m 34s.xml">
-      <configuration name="Unittest EngineTest.test_EarnsMoney_FromGreenOnlyOnTurn" configurationId="tests" />
+    <history-entry file="Unittest_StrategyTest_test_PurchaseCard_ReturnsCheapestMissingAndAvailableCard - 2017.01.05 at 15h 13m 28s.xml">
+      <configuration name="Unittest StrategyTest.test_PurchaseCard_ReturnsCheapestMissingAndAvailableCard" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_EngineTest - 2017.01.05 at 12h 10m 11s.xml">
-      <configuration name="Unittests in EngineTest" configurationId="tests" />
+    <history-entry file="Unittests_in_StrategyTest - 2017.01.05 at 15h 00m 49s.xml">
+      <configuration name="Unittests in StrategyTest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_EngineTest - 2017.01.05 at 12h 12m 03s.xml">
-      <configuration name="Unittests in EngineTest" configurationId="tests" />
+    <history-entry file="Unittests_in_StrategyTest - 2017.01.05 at 15h 04m 24s.xml">
+      <configuration name="Unittests in StrategyTest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_EngineTest - 2017.01.05 at 12h 13m 55s.xml">
-      <configuration name="Unittests in EngineTest" configurationId="tests" />
+    <history-entry file="Unittests_in_StrategyTest - 2017.01.05 at 15h 05m 18s.xml">
+      <configuration name="Unittests in StrategyTest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_EngineTest - 2017.01.05 at 12h 14m 10s.xml">
-      <configuration name="Unittests in EngineTest" configurationId="tests" />
+    <history-entry file="Unittests_in_StrategyTest - 2017.01.05 at 15h 05m 31s.xml">
+      <configuration name="Unittests in StrategyTest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_EngineTest - 2017.01.05 at 12h 15m 12s.xml">
-      <configuration name="Unittests in EngineTest" configurationId="tests" />
+    <history-entry file="Unittests_in_StrategyTest - 2017.01.05 at 15h 06m 23s.xml">
+      <configuration name="Unittests in StrategyTest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_EngineTest - 2017.01.05 at 12h 17m 36s.xml">
-      <configuration name="Unittests in EngineTest" configurationId="tests" />
+    <history-entry file="Unittests_in_StrategyTest - 2017.01.05 at 15h 11m 21s.xml">
+      <configuration name="Unittests in StrategyTest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_EngineTest - 2017.01.05 at 12h 18m 53s.xml">
-      <configuration name="Unittests in EngineTest" configurationId="tests" />
+    <history-entry file="Unittests_in_StrategyTest - 2017.01.05 at 15h 14m 09s.xml">
+      <configuration name="Unittests in StrategyTest" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -543,12 +528,41 @@
           <line>136</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/MachikoroSimulator/Tests/StrategyTest.py</url>
+          <line>79</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="9" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Game/Game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1972">
+          <caret line="116" column="22" lean-forward="false" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#13#0" expanded="false" />
+            <element signature="e#135#345#0" expanded="false" />
+            <element signature="e#386#584#0" expanded="false" />
+            <element signature="e#1839#2051#0" expanded="false" />
+            <element signature="e#2106#3047#0" expanded="false" />
+            <element signature="e#3107#3230#0" expanded="false" />
+            <element signature="e#3287#3986#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Engine/InitializedEngineContext.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -557,17 +571,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/__main__.py">
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Tests/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Strategy.py">
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Engine/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/CardEnum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/_Tools/Python3/Lib/contextlib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/_Tools/Python3/Lib/unittest/suite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/utrunner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="181" column="15" lean-forward="true" selection-start-line="181" selection-start-column="15" selection-end-line="181" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/tcunittest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="261" column="0" lean-forward="false" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/_Tools/Python3/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="614" column="33" lean-forward="false" selection-start-line="614" selection-start-column="33" selection-end-line="614" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Engine/InitializedEngineContext.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -576,40 +646,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Game/StartAGame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="40" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Game/Game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="93" column="35" lean-forward="true" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Tests/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Engine/__init__.py">
+    <entry file="file://$PROJECT_DIR$/__main__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -629,91 +670,97 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Game/PlayerContext.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="340">
+          <caret line="20" column="47" lean-forward="false" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Engine/InitializedEngineContext.py">
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Game/StartAGame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="40" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/CardEnum.py">
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Engine/Engine.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="557">
+          <caret line="69" column="51" lean-forward="false" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
+          <folding>
+            <element signature="e#2003#2315#0" expanded="false" />
+            <element signature="e#2359#2667#0" expanded="false" />
+            <element signature="e#2729#2996#0" expanded="false" />
+            <element signature="e#3052#3693#0" expanded="false" />
+            <element signature="e#3755#3910#0" expanded="false" />
+            <element signature="e#3980#4409#0" expanded="false" />
+            <element signature="e#4464#4917#0" expanded="false" />
+            <element signature="e#4967#5081#0" expanded="false" />
+            <element signature="e#5135#5591#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Game/Game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="58" column="38" lean-forward="true" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#13#0" expanded="false" />
+            <element signature="e#135#345#0" expanded="false" />
+            <element signature="e#386#584#0" expanded="false" />
+            <element signature="e#1839#2051#0" expanded="false" />
+            <element signature="e#2106#3047#0" expanded="false" />
+            <element signature="e#3107#3230#0" expanded="false" />
+            <element signature="e#3287#3986#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MachikoroSimulator/DeckManager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-374">
+        <state relative-caret-position="-381">
           <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/_Tools/Python3/Lib/contextlib.py">
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Tests/Game/GameTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/_Tools/Python3/Lib/unittest/suite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/utrunner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="181" column="15" lean-forward="true" selection-start-line="181" selection-start-column="15" selection-end-line="181" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/tcunittest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="261" column="0" lean-forward="false" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Bot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="31" column="29" lean-forward="false" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/_Tools/Python3/Lib/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="614" column="33" lean-forward="false" selection-start-line="614" selection-start-column="33" selection-end-line="614" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="340">
+          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+            <element signature="e#237#582#0" expanded="false" />
+            <element signature="e#618#748#0" expanded="false" />
+            <element signature="e#784#943#0" expanded="false" />
+            <element signature="e#978#1049#0" expanded="false" />
+            <element signature="e#1093#1361#0" expanded="false" />
+            <element signature="e#1434#1869#0" expanded="false" />
+            <element signature="e#1909#2081#0" expanded="false" />
+            <element signature="e#2122#2295#0" expanded="false" />
+            <element signature="e#2341#2488#0" expanded="false" />
+            <element signature="e#2552#2738#0" expanded="false" />
+            <element signature="e#2795#2947#0" expanded="false" />
+            <element signature="e#3001#3465#0" expanded="false" />
+            <element signature="e#3525#4036#0" expanded="false" />
+            <element signature="e#4087#4663#0" expanded="false" />
+            <element signature="e#4714#5184#0" expanded="false" />
+            <element signature="e#5244#5883#0" expanded="false" />
+            <element signature="e#5934#6401#0" expanded="false" />
+            <element signature="e#6486#6819#0" expanded="false" />
+            <element signature="e#6898#7272#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Tests/Engine/EngineTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="162" column="0" lean-forward="true" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+        <state relative-caret-position="476">
+          <caret line="28" column="18" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="28" selection-end-column="18" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#785#847#0" expanded="false" />
             <element signature="e#882#1184#0" expanded="false" />
             <element signature="e#1241#1423#0" expanded="false" />
             <element signature="e#1481#1799#0" expanded="false" />
@@ -726,25 +773,78 @@
             <element signature="e#3637#3971#0" expanded="false" />
             <element signature="e#4032#4419#0" expanded="false" />
             <element signature="e#4480#4851#0" expanded="false" />
+            <element signature="e#4910#5178#0" expanded="false" />
+            <element signature="e#5240#5557#0" expanded="false" />
+            <element signature="e#5625#5961#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Engine/Engine.py">
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+        <state relative-caret-position="235">
+          <caret line="17" column="69" lean-forward="false" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#2099#2411#0" expanded="false" />
-            <element signature="e#2455#2763#0" expanded="false" />
-            <element signature="e#2825#3092#0" expanded="false" />
-            <element signature="e#3148#3789#0" expanded="false" />
-            <element signature="e#3851#4006#0" expanded="false" />
-            <element signature="e#4076#4505#0" expanded="false" />
-            <element signature="e#4560#5013#0" expanded="false" />
-            <element signature="e#5063#5177#0" expanded="false" />
-            <element signature="e#5231#5687#0" expanded="false" />
+            <element signature="e#581#629#0" expanded="false" />
+            <element signature="e#673#747#0" expanded="false" />
+            <element signature="e#792#875#0" expanded="false" />
+            <element signature="e#913#982#0" expanded="false" />
+            <element signature="e#1332#1636#0" expanded="false" />
+            <element signature="e#1675#1789#0" expanded="false" />
+            <element signature="e#1830#1958#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Tests/BotTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#544#681#0" expanded="false" />
+            <element signature="e#720#902#0" expanded="false" />
+            <element signature="e#945#1173#0" expanded="false" />
+            <element signature="e#1216#1484#0" expanded="false" />
+            <element signature="e#1535#1734#0" expanded="false" />
+            <element signature="e#1803#2006#0" expanded="false" />
+            <element signature="e#2073#2310#0" expanded="false" />
+            <element signature="e#2358#2488#0" expanded="false" />
+            <element signature="e#2554#2793#0" expanded="false" />
+            <element signature="e#2857#3103#0" expanded="false" />
+            <element signature="e#3174#3369#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Strategy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="e#505#727#0" expanded="false" />
+            <element signature="e#773#981#0" expanded="false" />
+            <element signature="e#1720#2133#0" expanded="false" />
+            <element signature="e#2194#2650#0" expanded="false" />
+            <element signature="e#2680#3388#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachikoroSimulator/Tests/StrategyTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="107" column="8" lean-forward="true" selection-start-line="107" selection-start-column="8" selection-end-line="107" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#668#791#0" expanded="false" />
+            <element signature="e#844#1156#0" expanded="false" />
+            <element signature="e#1210#1407#0" expanded="false" />
+            <element signature="e#1464#1640#0" expanded="false" />
+            <element signature="e#1700#2243#0" expanded="false" />
+            <element signature="e#2304#2494#0" expanded="false" />
+            <element signature="e#2576#2804#0" expanded="false" />
+            <element signature="e#2891#3121#0" expanded="false" />
           </folding>
         </state>
       </provider>

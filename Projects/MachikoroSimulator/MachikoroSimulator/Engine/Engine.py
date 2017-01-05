@@ -36,16 +36,12 @@ FactoryMultiplierValues = { CardEnum.CheeseFactory: 3, CardEnum.FurnitureFactory
                             CardEnum.FruitAndVegetableStand: 2}
 
 
-
 class Engine:
-    def __init__(self, initialPlayerState, deck):
+    def __init__(self, initialPlayerState):
         self._initPlayerState = initialPlayerState
 
-        self._initialDeck = deepcopy(deck)
-        self._currentDeck = deck
-
-    def Reset(self):
-        self._currentDeck = deepcopy(self._initialDeck)
+    def InitialState(self):
+        return self._initPlayerState
 
     def WinConditionMet(self, players):
         """Evaluates all player states for one matching the win condition"""

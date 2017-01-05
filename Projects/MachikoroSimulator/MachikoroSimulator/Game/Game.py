@@ -1,20 +1,24 @@
 import random
 from ..CardEnum import *
+from copy import deepcopy
 
 class Game():
-    def __init__(self, players, engine):
+    def __init__(self, players, engine, deck):
         self._players = players
 
         self._playerCount = len(self._players)
 
         self._engine = engine
+        self._initialDeck = deepcopy(deck)
+        self._currentDeck = deck
+
         self._initializeGame()
 
     def _initializeGame(self):
         random.seed()
-        initState = self._engine.InitialState
+        initState = self._engine.InitialState()
 
-        for player in self.Players:
+        for player in self._players:
             player.InitialState(initState)
 
         self._currentPlayer = 0
@@ -46,11 +50,12 @@ class Game():
         self._AwardMoneyIfNecessary(rollnum)
 
         # ask current player for purchase
-        card = player.PurchaseCard(self._engine.GetAvailableCards())
+        card = player.PurchaseCard(self._currentDeck.GetAvailableCards())
 
         # make purchase
         if card is not CardEnum.NoCard:
-            if player.Deduct(CardCosts[card]):
+            if player.Deduct(CardCosts[card]) == CardCosts[card]:
+                self._currentDeck.RequestCard(card)
                 player.AwardCard(card)
 
         # increment current player (increment turn if back to first player)
@@ -76,42 +81,46 @@ class Game():
         while canContinue:
             # - Determine Cards activated on other players
             nextPlayer = self._players[nextIdx]
-            owed = self._engine.StealsMoney(nextPlayer.state, rollnum)
+            owed = self._engine.StealsMoney(nextPlayer.CurrentState(), rollnum)
 
             # - Attempt to aware going around to next
             available = currentPlayer.Deduct(owed)
             if available is None:
                 canContinue = False
-                break
+                continue
             else:
                 nextPlayer.Award(available)
                 if owed != available:
                     canContinue = False
-                    break
+                    continue
 
             nextIdx = self._getNextPlayerIndex(nextIdx)
             if nextIdx == self._currentPlayer:
                 canContinue = False
 
-    def _getNextPlayerIndex(self):
-        return (self._currentPlayer + 1) % self._playerCount
+    def _getNextPlayerIndex(self, curIdx = None):
+        idx = curIdx
+        if curIdx is None:
+            idx = self._currentPlayer
+
+        return (idx + 1) % self._playerCount
 
     def _AwardMoneyIfNecessary(self, rollnum):
         """Iterates thru all players and awards money from bank as applicable."""
         # Iterate thru other players first
         nextIdx = self._getNextPlayerIndex(self._currentPlayer)
         while nextIdx != self._currentPlayer:
-            player = self._players[next]
-            earned = self._enging.EarnsMoney(player.CurrentState, rollnum, False)
+            player = self._players[nextIdx]
+            earned = self._engine.EarnsMoney(player.CurrentState(), rollnum, False)
             # False because it is not the players turn
             player.Award(earned)
-            nextIdx = self._getNextPlayerIndex(next)
+            nextIdx = self._getNextPlayerIndex(nextIdx)
 
         # Award money to current player
         player = self._players[self._currentPlayer]
-        earned = self._engine.EarnsMoney(player.state, rollnum, True)
+        earned = self._engine.EarnsMoney(player.CurrentState(), rollnum, True)
         player.Award(earned)
 
     def Reset(self):
-        self._engine.Reset()
+        self._currentDeck = deepcopy(self._initialDeck)
         self._initializeGame()
