@@ -15,38 +15,47 @@ Decides:
 
 
 class BotState:
-    #TODO: I may want to have this init to default Machikoro state...
     def __init__(self):
         self.Deck = {}
         self.Money = 0
 
+    @staticmethod
+    def default():
+        from .CardEnum import CardEnum
+        state = BotState()
+        state.Deck = {CardEnum.WheatField: 1, CardEnum.Bakery: 1}
+        state.Money = 3
+
+        return state
+
 
 class Bot:
-    def __init__(self):
+    def __init__(self, name="unassigned"):
         self._state = None
         self._strategy = None
+        self.name = name
 
-    def WithPlan(self, strategy):
+    def with_plan(self, strategy):
         """Provides Bot with a Plan to follow"""
         self._strategy = strategy
 
-    def InitialState(self, state):
+    def initialstate(self, state):
         """Initialized Bot state at the beginning of a game."""
         self._state = state
 
-    def CurrentState(self):
+    def get_currentstate(self):
         """Returns the current state of the bot"""
         return self._state
 
-    def HowManyToRoll(self):
+    def get_number_toroll(self):
         """Asks bot how many dice to roll"""
-        return self._strategy.HowManyToRoll(self._state)
+        return self._strategy.get_number_toroll(self._state)
 
-    def PurchaseCard(self, availableCards):
+    def get_card_topurchase(self, availablecards):
         """Returns card to purchase or NoCard if undesired."""
-        return self._strategy.PurchaseCard(self._state, availableCards)
+        return self._strategy.get_card_topurchase(self._state, availablecards)
 
-    def Deduct(self,owed):
+    def deduct_money(self, owed):
 
         if owed < 0:
             raise Exception("Cannot Deduct negative amount")
@@ -61,13 +70,13 @@ class Bot:
 
         return result
 
-    def Award(self, earned):
+    def award_money(self, earned):
         if earned < 0:
             raise Exception("Cannot Award a negative amount.")
 
         self._state.Money += earned
 
-    def AwardCard(self, card):
+    def award_card(self, card):
         if card in self._state.Deck.keys():
             self._state.Deck[card] += 1
         else:

@@ -51,7 +51,7 @@ class StrategyTest(unittest.TestCase):
         state.Deck = {CardEnum.TrainStation: 1}
 
         #Act
-        roll = self.subject.HowManyToRoll(state)
+        roll = self.subject.get_number_toroll(state)
 
         #Assert
         self.assertEqual(roll, 2)
@@ -62,7 +62,7 @@ class StrategyTest(unittest.TestCase):
         state.Deck = {}
 
         # Act
-        roll = self.subject.HowManyToRoll(state)
+        roll = self.subject.get_number_toroll(state)
 
         # Assert
         self.assertEqual(roll, 1)
@@ -77,7 +77,7 @@ class StrategyTest(unittest.TestCase):
         }
 
         #Act
-        diff = self.subject._createDiffState(self.initState)
+        diff = self.subject._create_diff_state(self.initState)
 
         #Assert
         for key in expected.keys():
@@ -89,7 +89,7 @@ class StrategyTest(unittest.TestCase):
         state = BotState()
         state.Deck = _defaultEndState
         #Act
-        diff = self.subject._createDiffState(state)
+        diff = self.subject._create_diff_state(state)
 
         #Assert
         self.assertEqual(diff, {})
@@ -101,7 +101,7 @@ class StrategyTest(unittest.TestCase):
         ]
 
         # Act
-        card = self.subject.PurchaseCard(self.initState,available)
+        card = self.subject.get_card_topurchase(self.initState, available)
 
         # Assert
         self.assertEqual(card,CardEnum.TrainStation)
@@ -113,7 +113,7 @@ class StrategyTest(unittest.TestCase):
         ]
 
         # Act
-        card = self.subject.PurchaseCard(self.initState, available)
+        card = self.subject.get_card_topurchase(self.initState, available)
 
         # Assert
         self.assertEqual(card, CardEnum.ShoppingMall)

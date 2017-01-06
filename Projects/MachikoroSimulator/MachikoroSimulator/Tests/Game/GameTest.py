@@ -45,11 +45,11 @@ class GameTest(unittest.TestCase):
         state.Deck = {CardEnum.WheatField: 1, CardEnum.Bakery: 1}
         state.Money = 3
 
-        strat = StrategyFactory().CheeseFactoryStrategy()
+        strat = StrategyFactory().cheese_factory_strategy()
 
         bot = Bot()
-        bot.InitialState(state)
-        bot.WithPlan(strat)
+        bot.initialstate(state)
+        bot.with_plan(strat)
 
         return bot
 
@@ -65,7 +65,7 @@ class GameTest(unittest.TestCase):
         self.assertIsNotNone(game)
         self.assertEqual(game._currentDeck, self.deck)
         self.assertEqual(game._playerCount, 2)
-        self.assertEqual(self.basePlayers[0].CurrentState(),self._initPlayerState)
+        self.assertEqual(self.basePlayers[0].get_currentstate(), self._initPlayerState)
         self.assertEqual(game._currentPlayer, 0)
         self.assertEqual(game._turn, 0)
 
@@ -112,8 +112,8 @@ class GameTest(unittest.TestCase):
 
     def test_TakeMoney_RollNotOnARed(self):
         #Arrange
-        self.basePlayers[0].InitialState(self._goodState())
-        self.basePlayers[1].InitialState(self._badState())
+        self.basePlayers[0].initialstate(self._goodState())
+        self.basePlayers[1].initialstate(self._badState())
 
         # Hacky hacky hacky!
         self.subject._players = self.basePlayers
@@ -122,13 +122,13 @@ class GameTest(unittest.TestCase):
 
         #Assert
         #Confirms no money changed hands
-        self.assertEqual(self.basePlayers[0].CurrentState().Money, 10)
-        self.assertEqual(self.basePlayers[1].CurrentState().Money, 1)
+        self.assertEqual(self.basePlayers[0].get_currentstate().Money, 10)
+        self.assertEqual(self.basePlayers[1].get_currentstate().Money, 1)
 
     def test_TakeMoney_RollOnARedButNoReds(self):
         #Arrange
-        self.basePlayers[0].InitialState(self._goodState())
-        self.basePlayers[1].InitialState(self._badState())
+        self.basePlayers[0].initialstate(self._goodState())
+        self.basePlayers[1].initialstate(self._badState())
 
         # Hacky hacky hacky!
         self.subject._players = self.basePlayers
@@ -137,15 +137,15 @@ class GameTest(unittest.TestCase):
 
         #Assert
         #Confirms no money changed hands
-        self.assertEqual(self.basePlayers[0].CurrentState().Money, 10)
-        self.assertEqual(self.basePlayers[1].CurrentState().Money, 1)
+        self.assertEqual(self.basePlayers[0].get_currentstate().Money, 10)
+        self.assertEqual(self.basePlayers[1].get_currentstate().Money, 1)
 
     def test_TakeMoney_RollOnARed(self):
         #Arrange
-        self.basePlayers[0].InitialState(self._goodState())
+        self.basePlayers[0].initialstate(self._goodState())
         redState = self._badState()
         redState.Deck[CardEnum.Cafe] = 1
-        self.basePlayers[1].InitialState(redState)
+        self.basePlayers[1].initialstate(redState)
 
         # Hacky hacky hacky!
         self.subject._players = self.basePlayers
@@ -154,13 +154,13 @@ class GameTest(unittest.TestCase):
 
         #Assert
         #Confirms money changed hands
-        self.assertEqual(self.basePlayers[0].CurrentState().Money, 9)
-        self.assertEqual(self.basePlayers[1].CurrentState().Money, 2)
+        self.assertEqual(self.basePlayers[0].get_currentstate().Money, 9)
+        self.assertEqual(self.basePlayers[1].get_currentstate().Money, 2)
 
     def test_AwardMoney_RollABlue(self):
         # Arrange
-        self.basePlayers[0].InitialState(self._goodState())
-        self.basePlayers[1].InitialState(self._badState())
+        self.basePlayers[0].initialstate(self._goodState())
+        self.basePlayers[1].initialstate(self._badState())
 
         # Hacky hacky hacky!
         self.subject._players = self.basePlayers
@@ -169,17 +169,17 @@ class GameTest(unittest.TestCase):
 
         # Assert
         # Confirms everyone gets something
-        self.assertEqual(self.basePlayers[0].CurrentState().Money, 11)
-        self.assertEqual(self.basePlayers[1].CurrentState().Money, 2)
+        self.assertEqual(self.basePlayers[0].get_currentstate().Money, 11)
+        self.assertEqual(self.basePlayers[1].get_currentstate().Money, 2)
 
     def test_AwardMoney_RollABlueAndAGreen(self):
         # Arrange
         good = self._goodState()
         good.Deck[CardEnum.Ranch] = 1
-        self.basePlayers[0].InitialState(good)
+        self.basePlayers[0].initialstate(good)
         bad = self._badState()
         bad.Deck[CardEnum.Ranch] = 1
-        self.basePlayers[1].InitialState(bad)
+        self.basePlayers[1].initialstate(bad)
 
         # Hacky hacky hacky!
         self.subject._players = self.basePlayers
@@ -188,13 +188,13 @@ class GameTest(unittest.TestCase):
 
         # Assert
         # Confirms everyone gets something, but Current gets more
-        self.assertEqual(self.basePlayers[0].CurrentState().Money, 12)
-        self.assertEqual(self.basePlayers[1].CurrentState().Money, 2)
+        self.assertEqual(self.basePlayers[0].get_currentstate().Money, 12)
+        self.assertEqual(self.basePlayers[1].get_currentstate().Money, 2)
 
     def test_AwardMoney_RollEmpty(self):
         # Arrange
-        self.basePlayers[0].InitialState(self._goodState())
-        self.basePlayers[1].InitialState(self._badState())
+        self.basePlayers[0].initialstate(self._goodState())
+        self.basePlayers[1].initialstate(self._badState())
 
         # Hacky hacky hacky!
         self.subject._players = self.basePlayers
@@ -203,8 +203,8 @@ class GameTest(unittest.TestCase):
 
         # Assert
         # Confirms nobody gets anything
-        self.assertEqual(self.basePlayers[0].CurrentState().Money, 10)
-        self.assertEqual(self.basePlayers[1].CurrentState().Money, 1)
+        self.assertEqual(self.basePlayers[0].get_currentstate().Money, 10)
+        self.assertEqual(self.basePlayers[1].get_currentstate().Money, 1)
 
     def test_ExecTurn_IncrementsNextPLayerButNotTurnIfNotLastPlayer(self):
         #Arrange

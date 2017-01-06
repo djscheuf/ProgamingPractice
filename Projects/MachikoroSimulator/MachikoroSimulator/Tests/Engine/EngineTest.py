@@ -25,7 +25,7 @@ class EngineTest(unittest.TestCase):
 
     def _createPlayer(self,state):
         bot = Bot()
-        bot.InitialState(state)
+        bot.initialstate(state)
         return bot
 
     def test_Init(self):
@@ -41,7 +41,7 @@ class EngineTest(unittest.TestCase):
         #Arrange
         players = [self._createPlayer(self.winningState)]
         #Act
-        result = self.subject.WinConditionMet(players)
+        result = self.subject.winconditionmet(players)
         #Assert
         self.assertTrue(result)
 
@@ -50,7 +50,7 @@ class EngineTest(unittest.TestCase):
         players = [self._createPlayer(self.winningState), self._createPlayer(self.winningState),
                    self._createPlayer(self.winningState), self._createPlayer(self.winningState)]
         #Act
-        result = self.subject.WinConditionMet(players)
+        result = self.subject.winconditionmet(players)
         #Assert
         self.assertTrue(result)
 
@@ -58,14 +58,14 @@ class EngineTest(unittest.TestCase):
         #Arrange
         players = []
         #Act
-        result = self.subject.WinConditionMet(players)
+        result = self.subject.winconditionmet(players)
         #Assert
         self.assertFalse(result)
 
     def test_WinContion_None(self):
         # Arrange
         # Act
-        result = self.subject.WinConditionMet(None)
+        result = self.subject.winconditionmet(None)
         # Assert
         self.assertFalse(result)
 
@@ -75,9 +75,9 @@ class EngineTest(unittest.TestCase):
         winState.Money=999
         players = [self._createPlayer(self.initPlayerState), self._createPlayer(winState)]
         #Act
-        winner = self.subject.GetWinner(players)
+        winner = self.subject.get_winner(players)
         #Assert
-        self.assertEqual(winner.CurrentState(), winState)
+        self.assertEqual(winner.get_currentstate(), winState)
 
     def test_GetWinner_ReturnsFirstWinner(self):
         # Arrange
@@ -86,23 +86,23 @@ class EngineTest(unittest.TestCase):
         players = [self._createPlayer(self.initPlayerState), self._createPlayer(self.winningState),
                    self._createPlayer(winState)]
         # Act
-        winner = self.subject.GetWinner(players)
+        winner = self.subject.get_winner(players)
         # Assert
-        self.assertEqual(winner.CurrentState(), self.winningState)
+        self.assertEqual(winner.get_currentstate(), self.winningState)
 
     def test_Getwinner_ReturnsFirstWinner(self):
         # Arrange
         players = None
         # Act
-        winner = self.subject.GetWinner(players)
+        winner = self.subject.get_winner(players)
         # Assert
         self.assertEqual(winner, None)
 
     def test_EarnsMoney_FromGreenOnlyOnTurn(self):
         #Arrange
         #Act - 3 Activated Bakery, a green
-        onTurn = self.subject.EarnsMoney(self.initPlayerState, 3, True)
-        offTurn = self.subject.EarnsMoney(self.initPlayerState, 3, False)
+        onTurn = self.subject.earns_money(self.initPlayerState, 3, True)
+        offTurn = self.subject.earns_money(self.initPlayerState, 3, False)
         #Assert
         self.assertNotEqual(onTurn, offTurn)
         self.assertEqual(offTurn, 0)
@@ -111,8 +111,8 @@ class EngineTest(unittest.TestCase):
     def test_EarnsMoney_FromBluesWhenever(self):
         # Arrange
         # Act - 1 Activated WheatField, a Blue
-        onTurn = self.subject.EarnsMoney(self.initPlayerState, 1, True)
-        offTurn = self.subject.EarnsMoney(self.initPlayerState, 1, False)
+        onTurn = self.subject.earns_money(self.initPlayerState, 1, True)
+        offTurn = self.subject.earns_money(self.initPlayerState, 1, False)
         # Assert
         self.assertEqual(onTurn, offTurn)
         self.assertTrue(onTurn > 0)
@@ -121,8 +121,8 @@ class EngineTest(unittest.TestCase):
     def test_EarnsMoney_Zero_IfNoActivation(self):
         # Arrange
         # Act - 6 Technically activates a purple, but these are not implemented, so no activations.
-        onTurn = self.subject.EarnsMoney(self.initPlayerState, 6, True)
-        offTurn = self.subject.EarnsMoney(self.initPlayerState, 6, False)
+        onTurn = self.subject.earns_money(self.initPlayerState, 6, True)
+        offTurn = self.subject.earns_money(self.initPlayerState, 6, False)
         # Assert
         self.assertEqual(onTurn, offTurn)
         self.assertEqual(onTurn, 0)
@@ -133,8 +133,8 @@ class EngineTest(unittest.TestCase):
         redState = BotState()
         redState.Deck[CardEnum.Cafe] = 1
         # Act - 3 Activated Cafe, a red
-        onTurn = self.subject.EarnsMoney(redState, 3, True)
-        offTurn = self.subject.StealsMoney(redState, 3)
+        onTurn = self.subject.earns_money(redState, 3, True)
+        offTurn = self.subject.steals_money(redState, 3)
         # Assert
         self.assertNotEqual(onTurn, offTurn)
         self.assertEqual(onTurn, 0)
@@ -146,7 +146,7 @@ class EngineTest(unittest.TestCase):
         factoryState.Deck[CardEnum.Ranch] = 2
         factoryState.Deck[CardEnum.CheeseFactory] = 1
         #Act
-        result = self.subject.EarnsMoney(factoryState,7,True)
+        result = self.subject.earns_money(factoryState, 7, True)
         #Assert
         self.assertEqual(result,6)
 
@@ -157,7 +157,7 @@ class EngineTest(unittest.TestCase):
         factoryState.Deck[CardEnum.Mine] = 1
         factoryState.Deck[CardEnum.FurnitureFactory] = 1
         #Act
-        result = self.subject.EarnsMoney(factoryState,8,True)
+        result = self.subject.earns_money(factoryState, 8, True)
         #Assert
         self.assertEqual(result,9)
 
@@ -168,6 +168,6 @@ class EngineTest(unittest.TestCase):
         factoryState.Deck[CardEnum.AppleOrchard] = 2
         factoryState.Deck[CardEnum.FruitAndVegetableStand] = 1
         #Act
-        result = self.subject.EarnsMoney(factoryState,11,True)
+        result = self.subject.earns_money(factoryState, 11, True)
         #Assert
         self.assertEqual(result,8)

@@ -37,48 +37,48 @@ FactoryMultiplierValues = { CardEnum.CheeseFactory: 3, CardEnum.FurnitureFactory
 
 
 class Engine:
-    def __init__(self, initialPlayerState):
-        self._initPlayerState = initialPlayerState
+    def __init__(self, initplayerstate):
+        self._initPlayerState = initplayerstate
 
-    def InitialState(self):
+    def initialstate(self):
         return self._initPlayerState
 
-    def WinConditionMet(self, players):
+    def winconditionmet(self, players):
         """Evaluates all player states for one matching the win condition"""
         if players is None:
             return False
 
         for player in players:
-            state = player.CurrentState()
+            state = player.get_currentstate()
             if all(k in state.Deck for k in RequiredImprovements):
                 return True
 
         return False
 
-    def GetWinner(self, players):
+    def get_winner(self, players):
         """Returns first player who matches the win condition or None"""
         if players is None:
             return None
 
         for player in players:
-            state = player.CurrentState()
+            state = player.get_currentstate()
             if all(k in state.Deck for k in RequiredImprovements):
                 return player
 
         return None
 
-    def EarnsMoney(self, state, roll, playersTurn):
+    def earns_money(self, state, roll, isplayersturn):
         """Returns the amount earned by player, depending on whether it is their turn or not."""
         result = 0
 
-        if playersTurn:
-            result += self._EarnedWithGreens(state, roll)
+        if isplayersturn:
+            result += self._earned_withgreens(state, roll)
 
-        result += self._EarnedWithBlues(state, roll)
+        result += self._earned_withblues(state, roll)
 
         return result
 
-    def _EarnedWithGreens(self, state, roll):
+    def _earned_withgreens(self, state, roll):
         """Returns value earned by green cards"""
         # Technically this is a special case, but I might be able to re-use some of the logic for red and blue...
         #   just need to figure out the factories part.
@@ -90,31 +90,31 @@ class Engine:
                     continue
 
                 if card not in Factories:
-                    result += self._SimpleValueCalculation(state, card)
+                    result += self._simplevalue_calculation(state, card)
                 else:
-                    result += self._FactoryValueCalculation(state, card)
+                    result += self._factoryvalue_calculation(state, card)
         return result
 
-    def _SimpleValueCalculation(self, state, card):
+    def _simplevalue_calculation(self, state, card):
         """Returns value earned from simple value cards"""
         count = state.Deck[card]
         multiplier = SimpleValues[card]
         return multiplier*count
 
-    def _FactoryValueCalculation(self, state, factoryCard):
+    def _factoryvalue_calculation(self, state, factorycard):
         """Returns value earned from Factorys and their multipliers"""
         multipleCount = 0
-        for card in FactoryMultiplierCards[factoryCard]:
+        for card in FactoryMultiplierCards[factorycard]:
             if card not in state.Deck.keys():
                 continue
             else:
                 multipleCount += state.Deck[card]
 
-        multiplier = multipleCount*FactoryMultiplierValues[factoryCard]
-        count = state.Deck[factoryCard]
+        multiplier = multipleCount*FactoryMultiplierValues[factorycard]
+        count = state.Deck[factorycard]
         return multiplier*count
 
-    def _EarnedWithBlues(self, state, roll):
+    def _earned_withblues(self, state, roll):
         """Returns value earned by blue cards"""
         # I recognize that this is technically a repeat of the reds, but with a different filter. May try to extract later.
         result = 0
@@ -124,15 +124,15 @@ class Engine:
                 if card not in state.Deck.keys():
                     continue
 
-                result += self._SimpleValueCalculation(state, card)
+                result += self._simplevalue_calculation(state, card)
 
         return result
 
-    def StealsMoney(self, state, roll):
+    def steals_money(self, state, roll):
         """Returns money the player steals, since it is not their turn"""
-        return self._EarnedWithReds(state, roll)
+        return self._earned_withreds(state, roll)
 
-    def _EarnedWithReds(self, state, roll):
+    def _earned_withreds(self, state, roll):
         """Returns value pseudo-earned by red cards"""
         # I recognize that this is technically a repeat of the blues, but with a different filter. May try to extract later.
         result = 0
@@ -142,6 +142,6 @@ class Engine:
                 if card not in state.Deck.keys():
                     break
 
-                result += self._SimpleValueCalculation(state, card)
+                result += self._simplevalue_calculation(state, card)
 
         return result

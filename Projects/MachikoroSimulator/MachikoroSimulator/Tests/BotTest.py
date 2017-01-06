@@ -13,8 +13,8 @@ class BotTest(unittest.TestCase):
         state.Deck[CardEnum.Bakery] = 1
         state.Money = 3
 
-        self.FullBot.InitialState(state)
-        self.FullBot.WithPlan(StrategyFactory().CheeseFactoryStrategy())
+        self.FullBot.initialstate(state)
+        self.FullBot.with_plan(StrategyFactory().cheese_factory_strategy())
 
     def tearDown(self):
         pass
@@ -30,9 +30,9 @@ class BotTest(unittest.TestCase):
 
     def test_WithPlan(self):
         #Arrange
-        strat = StrategyFactory().DefaultStrategy()
+        strat = StrategyFactory().default()
         #Act
-        self.subject.WithPlan(strat)
+        self.subject.with_plan(strat)
         #assert
         self.assertEqual(strat, self.subject._strategy)
 
@@ -43,7 +43,7 @@ class BotTest(unittest.TestCase):
         state.Money = 1
 
         #Act
-        self.subject.InitialState(state)
+        self.subject.initialstate(state)
 
         #Assert
         self.assertEqual(self.subject._state, state)
@@ -54,10 +54,10 @@ class BotTest(unittest.TestCase):
         state.Deck[CardEnum.WheatField] = 1
         state.Money = 1
 
-        self.subject.InitialState(state)
+        self.subject.initialstate(state)
 
         #Act
-        currState = self.subject.CurrentState()
+        currState = self.subject.get_currentstate()
 
         #Assert
         self.assertEqual(state, currState)
@@ -66,10 +66,10 @@ class BotTest(unittest.TestCase):
         #Arrange
 
         #Act
-        result = self.FullBot.Deduct(2)
+        result = self.FullBot.deduct_money(2)
 
         #Assert
-        state = self.FullBot.CurrentState()
+        state = self.FullBot.get_currentstate()
         self.assertEqual(state.Money,1)
         self.assertEqual(result, 2)
 
@@ -77,10 +77,10 @@ class BotTest(unittest.TestCase):
         # Arrange
 
         # Act
-        result = self.FullBot.Deduct(4)
+        result = self.FullBot.deduct_money(4)
 
         # Assert
-        state = self.FullBot.CurrentState()
+        state = self.FullBot.get_currentstate()
         self.assertEqual(state.Money, 0)
         self.assertEqual(result, 3)
 
@@ -89,7 +89,7 @@ class BotTest(unittest.TestCase):
         unreachableFlag = True
         #Act
         try:
-            self.FullBot.Deduct(-1)
+            self.FullBot.deduct_money(-1)
             unreachableFlag = False
         except Exception:
             pass
@@ -99,16 +99,16 @@ class BotTest(unittest.TestCase):
     def test_Award_GivesAmount(self):
         #Arrange
         #Act
-        self.FullBot.Award(1)
+        self.FullBot.award_money(1)
         #Assert
-        self.assertEqual(self.FullBot.CurrentState().Money, 4)
+        self.assertEqual(self.FullBot.get_currentstate().Money, 4)
 
     def test_Award_NegativeAmountThrowsException(self):
         # Arrange
         unreachableFlag = True
         # Act
         try:
-            self.FullBot.Award(-1)
+            self.FullBot.award_money(-1)
             unreachableFlag = False
         except Exception:
             pass
@@ -119,9 +119,9 @@ class BotTest(unittest.TestCase):
         #Arrange
         card = CardEnum.Forest
         #Act
-        self.FullBot.AwardCard(card)
+        self.FullBot.award_card(card)
         #Assert
-        state = self.FullBot.CurrentState()
+        state = self.FullBot.get_currentstate()
         self.assertTrue(card in state.Deck.keys())
         self.assertEqual(state.Deck[card], 1)
 
@@ -129,7 +129,7 @@ class BotTest(unittest.TestCase):
         #Arrange
         card = CardEnum.Bakery
         #Act
-        self.FullBot.AwardCard(card)
+        self.FullBot.award_card(card)
         #Assert
-        state = self.FullBot.CurrentState()
+        state = self.FullBot.get_currentstate()
         self.assertEqual(state.Deck[card], 2)

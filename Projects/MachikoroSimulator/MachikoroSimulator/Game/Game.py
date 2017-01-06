@@ -16,32 +16,35 @@ class Game():
 
     def _initializeGame(self):
         random.seed()
-        initState = self._engine.InitialState()
+        initState = self._engine.initialstate()
 
         for player in self._players:
-            player.InitialState(initState)
+            player.initialstate(deepcopy(initState))
 
         self._currentPlayer = 0
         self._turn = 0
 
     def Run(self):
+        print("Starting a game.")
 
         gameFinished = False
         while not gameFinished:
             self._executeTurn()
-            gameFinished = self._engine.WinConditionMet(self._players)
+            print()
+            gameFinished = self._engine.winconditionmet(self._players)
 
-        self.Winner = self._engine.GetWinner(self._players)
-        self.TotalTurns = self._turns
+        self.winner = self._engine.get_winner(self._players)
+        self.total_turns = self._turn
 
     def _executeTurn(self):
         player = self._players[self._currentPlayer]
 
+        print("\tTurn {0}, Player {1}".format(self._turn, player.name))
         # Ask current player for roll.
-        dicecnt = player.HowManyToRoll()
+        dicecnt = player.get_number_toroll()
         # roll
         rollnum = self._roll(dicecnt)
-
+        print("\tPlayer rolls {0} dice, and gets a {1}".format(dicecnt, rollnum))
         # use engine to determine earning.
         #  - Steal first
         self._TakeMoneyIfNecessary(rollnum)
@@ -49,14 +52,19 @@ class Game():
         # - Then Earn
         self._AwardMoneyIfNecessary(rollnum)
 
+        state = player.get_currentstate()
+        print("\tAfter money has changed hands, the player now has:{0}".format(state.Money))
+
         # ask current player for purchase
-        card = player.PurchaseCard(self._currentDeck.GetAvailableCards())
+        card = player.get_card_topurchase(self._currentDeck.get_availablecards())
 
         # make purchase
         if card is not CardEnum.NoCard:
-            if player.Deduct(CardCosts[card]) == CardCosts[card]:
-                self._currentDeck.RequestCard(card)
-                player.AwardCard(card)
+            if player.get_currentstate().Money >= CardCosts[card]:
+                player.deduct_money(CardCosts[card])
+                self._currentDeck.request_card(card)
+                player.award_card(card)
+                print("\tThe player purchases {0}".format(card))
 
         # increment current player (increment turn if back to first player)
         self._currentPlayer = self._getNextPlayerIndex()
@@ -81,15 +89,15 @@ class Game():
         while canContinue:
             # - Determine Cards activated on other players
             nextPlayer = self._players[nextIdx]
-            owed = self._engine.StealsMoney(nextPlayer.CurrentState(), rollnum)
+            owed = self._engine.steals_money(nextPlayer.get_currentstate(), rollnum)
 
             # - Attempt to aware going around to next
-            available = currentPlayer.Deduct(owed)
+            available = currentPlayer.deduct_money(owed)
             if available is None:
                 canContinue = False
                 continue
             else:
-                nextPlayer.Award(available)
+                nextPlayer.award_money(available)
                 if owed != available:
                     canContinue = False
                     continue
@@ -111,15 +119,15 @@ class Game():
         nextIdx = self._getNextPlayerIndex(self._currentPlayer)
         while nextIdx != self._currentPlayer:
             player = self._players[nextIdx]
-            earned = self._engine.EarnsMoney(player.CurrentState(), rollnum, False)
+            earned = self._engine.earns_money(player.get_currentstate(), rollnum, False)
             # False because it is not the players turn
-            player.Award(earned)
+            player.award_money(earned)
             nextIdx = self._getNextPlayerIndex(nextIdx)
 
         # Award money to current player
         player = self._players[self._currentPlayer]
-        earned = self._engine.EarnsMoney(player.CurrentState(), rollnum, True)
-        player.Award(earned)
+        earned = self._engine.earns_money(player.get_currentstate(), rollnum, True)
+        player.award_money(earned)
 
     def Reset(self):
         self._currentDeck = deepcopy(self._initialDeck)

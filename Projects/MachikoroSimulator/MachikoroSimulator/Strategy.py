@@ -18,51 +18,51 @@ _defaultEndState = {
 
 
 class Strategy:
-    def __init__(self, desiredEndState = None):
+    def __init__(self, desired_end_state=None):
         from copy import deepcopy
         self.EndState = deepcopy(_defaultEndState)
 
-        if desiredEndState is not None:
-            for key in desiredEndState.keys():
-                self.EndState[key] = desiredEndState[key]
+        if desired_end_state is not None:
+            for key in desired_end_state.keys():
+                self.EndState[key] = desired_end_state[key]
 
-    def HowManyToRoll(self, state):
+    def get_number_toroll(self, state):
         """Returns how many dice to roll. If have train station always roll 2"""
         if CardEnum.TrainStation in state.Deck.keys() and state.Deck[CardEnum.TrainStation] > 0:
             return 2
 
         return 1
 
-    def PurchaseCard(self, state, availableCards):
+    def get_card_topurchase(self, state, available_cards):
         """Returns card to purchase, or NoCard"""
-        #get diffState
-        diffState = self._createDiffState(state)
+        #get diff_state
+        diff_state = self._create_diff_state(state)
 
         available = False
         while not available:
             #get Cheapest next desired Card
-            nextGet = self._findCheapestNextDesired(diffState)
+            next_get = self._get_next_cheapest_desired_card(diff_state)
 
-            if nextGet == CardEnum.NoCard:
-                nextGet = CardEnum.NoCard
+            if next_get == CardEnum.NoCard:
+                next_get = CardEnum.NoCard
                 available = True
-                break
+                continue
 
-            diffState[nextGet] = None
+            diff_state[next_get] = None
             # removes next cheapest from possibles, prevents inf loop
 
-            if nextGet in availableCards:
+            if next_get in available_cards:
                 available = True
 
-        return nextGet
+        return next_get
 
-    def _createDiffState(self, curState):
+    def _create_diff_state(self, cur_state):
         """Determines difference between current and desired states"""
         diffState = {}
         for key in list(self.EndState.keys()):
             curCnt = 0
             try:
-                curCnt = curState.Deck[key]
+                curCnt = cur_state.Deck[key]
             except KeyError:
                 pass
 
@@ -72,42 +72,47 @@ class Strategy:
 
         return diffState
 
-    def _findCheapestNextDesired(self, diffState):
+    @staticmethod
+    def _get_next_cheapest_desired_card(diff_state):
         """Finds the next cheapest card that is desirable to purchase"""
         # search for min within in Dict
         # may optimize later
 
-        nextCard = CardEnum.NoCard
-        minCost = 1e6  # Arbitrarily Large Number
+        next_card = CardEnum.NoCard
+        min_cost = 1e6  # Arbitrarily Large Number
 
-        for key in list(diffState.keys()):
-            if diffState[key] is not None:
-                if diffState[key] < minCost:
-                    nextCard = key
-                    minCost = diffState[key]
+        for key in list(diff_state.keys()):
+            if diff_state[key] is not None:
+                if diff_state[key] < min_cost:
+                    next_card = key
+                    min_cost = diff_state[key]
 
-        return nextCard
+        return next_card
 
 
 class StrategyFactory:
     def __init__(self):
         pass
 
-    def DefaultStrategy(self):
-        endState = {}
-        return Strategy(endState)
+    @staticmethod
+    def default():
+        end_state = {}
+        return Strategy(end_state)
 
-    def CheeseFactoryStrategy(self):
-        endState = {CardEnum.Ranch: 3, CardEnum.CheeseFactory: 3}
-        return Strategy(endState)
+    @staticmethod
+    def cheese_factory_strategy():
+        end_state = {CardEnum.Ranch: 3, CardEnum.CheeseFactory: 3}
+        return Strategy(end_state)
 
-    def FurnitureFactoryStrategy(self):
-        endState = {CardEnum.Forest: 3, CardEnum.FurnitureFactory: 3}
-        return Strategy(endState)
+    @staticmethod
+    def furniture_factory_strategy():
+        end_state = {CardEnum.Forest: 3, CardEnum.FurnitureFactory: 3}
+        return Strategy(end_state)
 
-    def MyStrategy(self):
-        endState = {CardEnum.Ranch: 2, CardEnum.Bakery: 2,
-                    CardEnum.ConvenienceStore: 2, CardEnum.Mine: 2,
-                    CardEnum.CheeseFactory: 2, CardEnum.Forest: 2,
-                    CardEnum.FurnitureFactory: 2}
-        return Strategy(endState)
+    @staticmethod
+    def developer_strategy():
+        end_state = {CardEnum.Ranch: 2, CardEnum.Bakery: 2,
+                     CardEnum.ConvenienceStore: 2, CardEnum.Mine: 2,
+                     CardEnum.CheeseFactory: 2, CardEnum.Forest: 2,
+                     CardEnum.FurnitureFactory: 2}
+        return Strategy(end_state)

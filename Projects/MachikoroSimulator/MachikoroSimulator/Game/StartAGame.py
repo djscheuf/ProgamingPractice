@@ -2,5 +2,6 @@ from .PlayerContext import PlayerContext
 
 
 class StartAGame:
-    def With(firstBot, secondBot):
-        return PlayerContext(firstBot, secondBot)
+    @staticmethod
+    def with_(first, second):
+        return PlayerContext(first, second)

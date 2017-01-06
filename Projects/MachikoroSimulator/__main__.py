@@ -7,26 +7,36 @@ Responsibilities:
 + Present Results
 """
 
+from MachikoroSimulator.Bot import *
+from MachikoroSimulator.CardEnum import CardEnum
+from MachikoroSimulator import Strategy
+from MachikoroSimulator.Engine.DeclareAnEngine import DeclareAnEngine
+from MachikoroSimulator.DeckManager import DeckManager
+from MachikoroSimulator.Game.StartAGame import StartAGame
+
 
 def routine():
     print("Machikoro Simulator v0.0")
-    # Collect user input
-    # aiFilename = tk.askopenfilename()
-    gameCnt = 100
-    # input("Please enter desired number of games > ")
 
-    if(gameCnt < 0):
-        print("Invalid number of games. Exiting.")
-        return
+    p1 = Bot("Cheese Bot")
+    p1.with_plan(Strategy.StrategyFactory.cheese_factory_strategy())
 
-    #Init Game and Simulator settings
-    print("Initing AIs")
-    print("Allocating Game Engine")
-    print("Wiring Game")
-    print("Preparing Simulator")
+    p2 = Bot("Furniture Bot")
+    p2.with_plan(Strategy.StrategyFactory.furniture_factory_strategy())
 
-    print("Run Simulator")
-    # Present Results
+    engine = DeclareAnEngine.with_initial_state({CardEnum.WheatField: 1, CardEnum.Bakery: 1}, 3)
+
+    deck = DeckManager()
+
+    game = StartAGame.with_(p1, p2).using(engine, deck)
+    print("Set up a game between {0}, {1}, with the standard deck, and starting state.".format(p1.name, p2.name))
+    game.Run()
+
+    #print some result info
+    print("Game completed in {0} turns.".format(game.total_turns))
+    winner = game.winner
+    print("Winner is {0}, with {1} money.".format(winner.name, winner.get_currentstate().money))
+
 
 if __name__ == "__main__":
     routine()

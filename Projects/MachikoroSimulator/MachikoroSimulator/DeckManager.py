@@ -20,13 +20,14 @@ _defaultStartingDeck = {
     CardEnum.Forest: 6,
     CardEnum.TVStation: 4,
     CardEnum.Stadium: 4,
-    CardEnum.BusinesCenter: 4,
+    CardEnum.BusinessCenter: 4,
     CardEnum.CheeseFactory: 6,
     CardEnum.FurnitureFactory: 6,
     CardEnum.Mine: 6,
     CardEnum.FamilyRestaurant: 6,
     CardEnum.AppleOrchard: 6,
     CardEnum.FruitAndVegetableStand: 6
+    #TODO: Need to ensure the required improvements always show up!
 }
 
 
@@ -35,7 +36,7 @@ class DeckManager:
         from copy import deepcopy
         self._deck = deepcopy(_defaultStartingDeck)
 
-    def _IsCardAvailable(self, card):
+    def _iscardavailable(self, card):
         """Returns boolean flag of card availability."""
         if card not in self._deck.keys():
             return False
@@ -43,16 +44,16 @@ class DeckManager:
         cnt = self._deck[card]
         return cnt > 0
 
-    def RequestCard(self, card):
+    def request_card(self, card):
         """Request a card from the deck. If available it is awarded,
              if not, then denied"""
-        if not self._IsCardAvailable(card):
+        if not self._iscardavailable(card):
             return False
 
         self._deck[card] -= 1
         return True
 
-    def GetAvailableCards(self):
+    def get_availablecards(self):
         result = []
 
         for key in self._deck.keys():

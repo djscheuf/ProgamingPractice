@@ -16,7 +16,7 @@ class CardEnum(IntEnum):
     Forest = 6
     TVStation = 7  # Not presently supported
     Stadium = 8  # Not presently supported
-    BusinesCenter = 9  # Not presently supported
+    BusinessCenter = 9  # Not presently supported
     CheeseFactory = 10
     FurnitureFactory = 11
     Mine = 12
@@ -40,7 +40,7 @@ CardCosts = {
     CardEnum.Forest: 3,
     CardEnum.TVStation: 7,
     CardEnum.Stadium: 6,
-    CardEnum.BusinesCenter: 8,
+    CardEnum.BusinessCenter: 8,
     CardEnum.CheeseFactory: 5,
     CardEnum.FurnitureFactory: 3,
     CardEnum.Mine: 6,

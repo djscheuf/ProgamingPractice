@@ -1,21 +1,21 @@
 from .Game import Game
 
 
-class PlayerContext():
+class PlayerContext:
     maxPlayers = 4
 
-    def __init__(self, firstPlayer, secondPlayer):
+    def __init__(self, first, second):
         self._players = []
-        self._player.add(firstPlayer)
-        self._players.add(secondPlayer)
+        self._players.append(first)
+        self._players.append(second)
         self._count = 2
 
-    def And(self, player):
+    def and_(self, player):
         if self._count >= PlayerContext.maxPlayers:
             raise Exception("Too many players added.")
 
         self._players.add(player)
         self._count += 1
 
-    def Using(self, engine, deck):
+    def using(self, engine, deck):
         return Game(self._players, engine, deck)
