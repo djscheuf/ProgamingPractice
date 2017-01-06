@@ -18,8 +18,11 @@ from MachikoroSimulator.Game.StartAGame import StartAGame
 def routine():
     print("Machikoro Simulator v0.0")
 
-    p1 = Bot("Cheese Bot")
-    p1.with_plan(Strategy.StrategyFactory.cheese_factory_strategy())
+    #p1 = Bot("Cheese Bot")
+    #p1.with_plan(Strategy.StrategyFactory.cheese_factory_strategy())
+
+    p1 = Bot("Dev Bot")
+    p1.with_plan(Strategy.StrategyFactory.developer_strategy())
 
     p2 = Bot("Furniture Bot")
     p2.with_plan(Strategy.StrategyFactory.furniture_factory_strategy())
@@ -35,7 +38,7 @@ def routine():
     #print some result info
     print("Game completed in {0} turns.".format(game.total_turns))
     winner = game.winner
-    print("Winner is {0}, with {1} money.".format(winner.name, winner.get_currentstate().money))
+    print("Winner is {0}, with {1} money.".format(winner.name, winner.get_currentstate().Money))
 
 
 if __name__ == "__main__":

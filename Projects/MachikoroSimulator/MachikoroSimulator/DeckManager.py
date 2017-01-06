@@ -27,9 +27,9 @@ _defaultStartingDeck = {
     CardEnum.FamilyRestaurant: 6,
     CardEnum.AppleOrchard: 6,
     CardEnum.FruitAndVegetableStand: 6
-    #TODO: Need to ensure the required improvements always show up!
 }
 
+_majorImprovements = [CardEnum.TrainStation, CardEnum.ShoppingMall, CardEnum.AmusementPark, CardEnum.RadioTower]
 
 class DeckManager:
     def __init__(self):
@@ -38,6 +38,9 @@ class DeckManager:
 
     def _iscardavailable(self, card):
         """Returns boolean flag of card availability."""
+        if card in _majorImprovements:
+            return True
+
         if card not in self._deck.keys():
             return False
 
@@ -50,6 +53,9 @@ class DeckManager:
         if not self._iscardavailable(card):
             return False
 
+        if card in _majorImprovements:
+            return True
+
         self._deck[card] -= 1
         return True
 
@@ -59,5 +65,8 @@ class DeckManager:
         for key in self._deck.keys():
             if self._deck[key] > 0:
                 result.append(key)
+
+        for card in _majorImprovements:
+            result.append(card)
 
         return result
